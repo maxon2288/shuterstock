@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+
+    <body class="page">
+        %=symbols=%
+
+        {{> header/header}}
+
+        <div class="main">
+            <div class="wrapper">
+
+                <div class="prev-content">
+                    <div class="main__top">
+                        <div class="breadcrumbs">
+                            <a href="#" class="breadcrumbs__link">
+                                Главная
+                            </a>
+
+                            <a href="#" class="breadcrumbs__link">
+                                / Топ 100 работ
+                            </a>
+                             
+                        </div>
+    
+                        <div class="m-title ">Топ 100 работ</div>
+
+                        <div class="category hund">
+                            <a href="#" class="category__item m-button-1">Иллюстрации</a>
+                            <a href="#" class="category__item m-button-2">Фотографии</a>
+                            <a href="#" class="category__item m-button-2">Видео</a>
+                        </div>
+                    </div> 
+                    
+                </div>
+
+                <div class="main__content">
+                    <div class="main__left">
+
+                        <div class="works ">
+
+                            <div class="person-items">
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                                {{> work-item/work-item}}
+                            </div>
+            
+                        </div>
+                    </div>
+
+                    <div class="sidebar">
+                        {{> sidebar-last-news/sidebar-last-news}}
+                    </div>
+                
+                </div>
+
+                
+                
+            </div>
+        </div>
+
+        <div class="page__buffer"></div>
+
+        {{> footer/ footer}}
+        
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+
+        <script>svg4everybody();</script>
+
+
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+        <script src="_trg.js"></script>
+    </body>
