@@ -6,7 +6,7 @@
     background-color: rgb(255, 255, 255);
     margin-bottom: 65px;
     @media screen and (max-width: 1370px){
-        flex-direction: column;
+        flex-wrap: wrap;
     }
     &__item{
         display: flex;
@@ -19,12 +19,12 @@
             border-right: none;
         }
         @media screen and (max-width: 1370px){
-            border-right: none;
             border-bottom: 1px solid #e0e4f1;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: flex-start;
+            min-width: auto;
+            max-width: auto;
+            width: 33%;
+            padding: 20px;
         }
         @media screen and (max-width: 375px){
             padding: 20px;
@@ -36,7 +36,7 @@
             align-items: center;
         }
         @media screen and (max-width: 767px){
-            padding: 15px;
+
         }
         &-person{
             max-width: 520px;
@@ -143,6 +143,17 @@
 
 .chart-author{
     margin-top: 30px;
+    .chart{
+        width: 0;
+        max-width: 100%;
+        width: 100%;
+        margin-right: 30px;
+    }
+    .myChart, .myChartMulti, .myChartPie{
+        margin-right: 0;
+        max-width: 100% !important;
+        min-width: 400px;
+    }
 }
 .chart-block{
     margin-top: 50px;

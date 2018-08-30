@@ -27,9 +27,7 @@
 
             
             <div class="map">
-                <div id="map">
-                
-                </div>
+                <div id="map" data-x="55.76" data-y="37.64"></div>
                 <div class="map-content">
                     <div class="map__item">
                         <div class="map__title">
@@ -77,26 +75,28 @@
 
     <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
     <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvDt6m7Nkw8h7DkmO15p75-Zi95DYln9c&callback=initMap"></script>
-    
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
     <script>
-        function initMap() {
-                // Координаты центра на карте. Широта: 56.2928515, Долгота: 43.7866641
-                var centerLatLng = new google.maps.LatLng(55.612489, 37.203508);
-                // Обязательные опции с которыми будет проинициализированна карта
-                var mapOptions = {
-                    center: centerLatLng, // Координаты центра мы берем из переменной centerLatLng
-                    zoom: 10,
-                    disableDefaultUI: true          // Зум по умолчанию. Возможные значения от 0 до 21
-                };
-                // Создаем карту внутри элемента #map
-                var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-                var marker = new google.maps.Marker({
-                    position: centerLatLng,
+        $(document).ready(function () {
+            var x = $('#map').attr('data-x');
+            var y = $('#map').attr('data-y');
+
+            var myMap;
+
+            ymaps.ready(init);
+
+            function init () {
+                myMap = new ymaps.Map('map', {
+                    center: [x , y],
+                    zoom: 10
+                }, {
+                    searchControlProvider: 'yandex#search'
                 });
+
             }
-            // Ждем полной загрузки страницы, после этого запускаем initMap()
-            google.maps.event.addDomListener(window, "load", initMap);
+        });
+        
     </script>   
     <script src="_trg.js"></script>
 </body>

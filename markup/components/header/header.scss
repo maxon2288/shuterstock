@@ -1,11 +1,21 @@
 .header{
     padding: 20px 0;
     background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000000;
     .contact-mail{
-        @media screen and (max-width: 320px){
+        @media screen and (max-width: 425px){
             display: none;
         }
     }
+
+    @media screen and(max-width: 768px) {
+        padding: 7px 0;
+    }
+    
     &__bottom{
         width: 100%;
         padding: 18px 0;
@@ -13,7 +23,7 @@
         color: #fff;
         flex-wrap: wrap;
         .wrapper{
-            @media screen and (max-width: 767px){
+            @media screen and (max-width: 768px){
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -36,8 +46,12 @@
         width: 100%;     
         @media screen and (max-width: 1024px){
             flex-direction: column;
+            align-items: flex-start;
             max-width: 270px;
-        }  
+        } 
+        @media screen and(max-width: 768px) {
+            margin-bottom: 10px;
+        } 
     }
     .lang{
         @media screen and (max-width: 320px){
@@ -96,6 +110,11 @@
     color: rgb(255, 255, 255);
     font-weight: bold;
     text-transform: uppercase;
+    display: flex;
+    align-self: center;
+    @media screen and(max-width: 1024px) {
+        align-self: flex-start;
+    }
 }
 .search{
     display: flex;
@@ -106,6 +125,9 @@
         max-width: 856px;
         width: 100%;   
         margin-right: 5px;
+        @media screen and(max-width: 768px) {
+            padding-left: 10px;
+        }
     }      
     @media screen and (max-width: 768px){
         display: flex;
@@ -117,6 +139,21 @@
     }
     @media screen and (max-width: 425px){
         margin-top: 10px;
+    }
+    .m-button-1{
+        margin-left: 5px;
+        @media screen and(max-width: 768px) {
+            margin-left: 0;
+        }
+    }
+    .select-container{
+        @media screen and(max-width: 768px) {
+            margin-top: 10px;
+            max-width: 100%;
+            .nice-select{
+                width: 100%; 
+            }
+        }
     }
 }
 .header-menu{
@@ -204,8 +241,13 @@
     }
     .popup_close{
         display: none;
+        svg{
+            fill: #000;
+        }
         @media screen and (max-width: 1240px){
             display: flex;
+            width: 20px;
+            height: 20px;
         }
     }
 }

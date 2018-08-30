@@ -6,39 +6,52 @@
     </head>
 
     <body class="page">
-        %=symbols=%
+
 
         {{> header/header}}
+
+
         <div class="main">
             <div class="wrapper">
 
                 <div class="prev-content">
                     <div class="main__top">
                         <div class="m-title">Рейтинг портфелей</div>
+
+                        
                     </div>
 
                     {{> category/category}}
 
-                    <div class="m-title-3">
-                        Топ 100 работ авторов
-                    </div>
                 </div>
 
                 <div class="main__content">
                     <div class="main__left">
+                            <div class="m-title-3 top__top">
+
+                                    Топ 100 работ авторов
+            
+                                    <a href="#" class="m-link">
+                                        Показать больше
+                                    </a>
+                                </div>
                         <div class="works">
 
                             <div class="person-items">
+
                                 {{> work-item/work-item}}
                                 {{> work-item/work-item}}
                                 {{> work-item/work-item}}
                                 {{> work-item/work-item}}
+
+                                <!-- row -->
 
                                 {{> work-item/work-item}}
                                 {{> work-item/work-item}}
                                 {{> work-item/work-item}}
                                 {{> work-item/work-item}}
                                 
+                                <!-- row -->
                             </div>
 
                         </div>
@@ -140,6 +153,8 @@
         <div class="page__buffer"></div>
 
         {{> footer/footer}}
+
+
 
         <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
         <script>svg4everybody();</script>

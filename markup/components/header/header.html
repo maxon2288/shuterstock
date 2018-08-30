@@ -1,9 +1,11 @@
-<div class="overlay"></div>
 <div class="header-container">
     <header class="header">
         <div class="wrapper">
+
+            <div class="humburger-overlay"></div>
             <div class="header-menu">
                 <div class="popup_close">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971"><path d="M28.228 23.986L47.092 5.122c1.172-1.171 1.172-3.071 0-4.242-1.172-1.172-3.07-1.172-4.242 0L23.986 19.744 5.121.88C3.949-.292 2.051-.292.879.88c-1.172 1.171-1.172 3.071 0 4.242l18.865 18.864L.879 42.85c-1.172 1.171-1.172 3.071 0 4.242.586.585 1.354.878 2.121.878s1.535-.293 2.121-.879l18.865-18.864L42.85 47.091c.586.586 1.354.879 2.121.879s1.535-.293 2.121-.879c1.172-1.171 1.172-3.071 0-4.242L28.228 23.986z"/></svg>
                 </div>
                 <a href="top-portfolio.html" class="header-menu__link">Топ портфелей</a>
                 <a href="top-hundred.html" class="header-menu__link">Топ 100 работ</a>
@@ -33,66 +35,33 @@
             <a href="popup.html" class="m-button-2 modal-open button-sign callPopup " data-popupBlock="popup-sign">Войти</a>
 
 
-            <div class="modal popup-sign popup">
-                <div class="popup_close">
-                </div>
-                <form action="/" id="my-form">
-                    <div class="popup__title">
-                         Войти
-                    </div>
-                    
-                    
-                    <input type="text" name="email" placeholder="Логин" class="m-field-popup">
-                    
-                    <input type="password" name="password" placeholder="Пароль" class="m-field-popup">
-                    <button class="m-button-1 popup__submit">Войти</button>
-    
-                    <a href="popup/popup-2.html" class="m-link popup__link  callPopup popup-reg-open" data-popupBlock="popup-reg">
-                         Регистрация
-                    </a>
-                </form>
-            </div>
-
-            <div class="popup-reg popup">
-                <div class="popup_close">
-                </div>
-
-                <form action="/" id="my-form-2">
-                    <div class="popup__title">
-                         Регистрация
-                    </div>
-                
-                    
-                    <input type="text" name="email" placeholder="E- mail" class="m-field-popup">
-                    
-                    <input type="password" name="password" placeholder="Придумайте пароль" class="m-field-popup">
-                    
-                    <input type="password" name="password" placeholder="Повторите пароль" class="m-field-popup">
-                    
-                    <button class="m-button-1 popup__submit">регистрация</button>
-                </form>
-
-                <a href="popup/popup-2.html" class="m-link popup__link  callPopup popup-sign-open">
-                     Войти
-                </a>
-            </div>
+            
         </div>
     </header>
 
     <div class="header__bottom">
         <div class="wrapper">
             <div class="header__bottom-left">
-                <div class="microstock">
-                    Microstockstar
-                </div>
+                <a href="index.html" class="microstock">
+                    <img src="../../static/img/content/logo.png" alt="">
+                </a>
                 <div class="microstock__desc">
                     Рейтинг стоковых
                     изображений
                 </div>
             </div>
+            
             <div class="header__bottom-right">
                 <div class="search">
                     <input type="text" class="search__field m-field" placeholder="ПОИСК СТОКОВЫХ ИЗОБРАЖЕНИЙ">
+                    <div class="select-container">
+                        <select name="select" id="select" class="select">
+                            <option> all images</option>
+                            <option>photos</option>
+                            <option>vectors</option>
+                            <option>footage</option>
+                        </select>
+                    </div>
                     <a href="#" class="m-button-1">
                         НАЙТИ
                     </a>

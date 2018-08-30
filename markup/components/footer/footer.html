@@ -68,3 +68,48 @@
     </div>
 
 </div>
+
+
+<div class="overlay"></div>
+
+<div class="modal popup-sign popup">
+    <div class="popup_close">
+    </div>
+    <form action="/" id="my-form">
+        <div class="popup__title">
+                Войти
+        </div>
+        
+        <input type="text" name="email" placeholder="Логин" class="m-field-popup">
+        
+        <input type="password" name="password" placeholder="Пароль" class="m-field-popup">
+        <button class="m-button-1 popup__submit">Войти</button>
+
+        <a href="popup/popup-2.html" class="m-link popup__link  callPopup popup-reg-open" data-popupBlock="popup-reg">
+                Регистрация
+        </a>
+    </form>
+</div>
+
+<div class="popup-reg popup">
+    <div class="popup_close">
+    </div>
+
+    <form action="/" id="my-form-2">
+        <div class="popup__title">
+                Регистрация
+        </div>
+        
+        <input type="text" name="email" placeholder="E- mail" class="m-field-popup">
+        
+        <input type="password" name="password" placeholder="Придумайте пароль" class="m-field-popup">
+        
+        <input type="password" name="passwordYet" placeholder="Повторите пароль" class="m-field-popup">
+        
+        <button class="m-button-1 popup__submit">регистрация</button>
+    </form>
+
+    <a href="popup/popup-2.html" class="m-link popup__link  callPopup popup-sign-open">
+            Войти
+    </a>
+</div>
