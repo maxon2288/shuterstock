@@ -23,7 +23,7 @@
         color: #fff;
         flex-wrap: wrap;
         .wrapper{
-            @media screen and (max-width: 768px){
+            @media screen and (max-width: 1000px){
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -49,7 +49,7 @@
             align-items: flex-start;
             max-width: 270px;
         } 
-        @media screen and(max-width: 768px) {
+        @media screen and(max-width: 1000px) {
             margin-bottom: 10px;
         } 
     }
@@ -242,7 +242,7 @@
     .popup_close{
         display: none;
         svg{
-            fill: #000;
+            fill: #c4c4c4;
         }
         @media screen and (max-width: 1240px){
             display: flex;
@@ -295,7 +295,10 @@
         text-transform: uppercase;
         position: relative;
         font-weight: 500;
-
+        svg{
+            width: 20px;
+            height: 20px;
+        }
         &:before{
             content: '';
             position: absolute;

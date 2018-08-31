@@ -2618,15 +2618,22 @@ html.hidden {
     }
     
     .popup_close {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    padding: 20px;
-    cursor: pointer;
-    display: flex;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        display: flex;
         justify-content: center;
         align-items: center;
-    transition: 0.3s;
+        transition: 0.3s;
+        svg{
+            display: block;
+            width: 15px;
+            height: 15px;
+            fill: #c4c4c4;
+        }
     }
     
     .popup_close:hover {
