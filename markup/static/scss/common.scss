@@ -111,7 +111,7 @@ html.hidden {
     left: 0;
     transition: 0.3s;
     right: 0;
-    height: 2px;
+    height: 1px;
     background-color: #488aeb;
         transform: scaleX(1);
     }
@@ -135,7 +135,7 @@ html.hidden {
     left: 0;
     transition: 0.3s;
     right: 0;
-    height: 2px;
+    height: 1px;
     background-color: #488aeb;
         transform: scaleX(1);
     }
@@ -188,26 +188,26 @@ html.hidden {
     }
     
     .m-button-1 {
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 3px;
-    min-width: 205px;
-    padding: 0 15px;
-    height: 44px;
-    display: flex;
+        border-style: solid;
+        border-width: 2px;
+        border-radius: 3px;
+        min-width: 205px;
+        padding: 0 15px;
+        min-height: 44px;
+        display: flex;
         justify-content: center;
         align-items: center;
-    align-self: flex-start;
-    font-size: 14px;
-    text-transform: uppercase;
-    line-height: 1.2;
-    font-weight: 500;
-    transition: 0.3s;
-    background-color: #488af3;
-    color: #fff;
-    border-color: #488af3;
+        align-self: flex-start;
+        font-size: 14px;
+        text-transform: uppercase;
+        line-height: 1.2;
+        font-weight: 500;
+        transition: 0.3s;
+        background-color: #488af3;
+        color: #fff;
+        border-color: #488af3;
         box-shadow: 0px 4px 24px 0px rgba(72, 138, 243, 0.47);
-    cursor: pointer;
+        cursor: pointer;
     }
     
     .m-button-1:hover {
@@ -1157,7 +1157,7 @@ html.hidden {
     bottom: 0;
     right: 0;
     left: 0;
-    height: 2px;
+    height: 1px;
     background-color: #488af3;
         transform: scaleX(1);
     transition: 0.3s;
@@ -1320,8 +1320,8 @@ html.hidden {
     }
     
     .ui-datepicker-header {
-    position: relative;
-    margin-bottom: 10px;
+        position: relative;
+        margin-bottom: 10px;
     }
     
     .ui-datepicker-title {
@@ -1421,6 +1421,35 @@ html.hidden {
     color: black;
     text-transform: uppercase;
     }
+
+    .already-code{
+        border: 1px solid #cecece;
+        background-color: rgb(240, 240, 240);
+        margin: 20px 0;
+        padding: 8px;
+        min-height: 44px;
+        margin-top: 0;
+        color: #868686;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #form-desc{
+        display: none;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        img{
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .m-button-1{
+            width: 100%;
+        }
+    }
     
     .ui-datepicker-calendar th {
     text-align: center;
@@ -1510,16 +1539,16 @@ html.hidden {
     }
     
     .work-preview {
-    display: flex;
-    max-width: 1080px;
-    border-radius: 3px;
-    background-color: #fff;
+        display: flex;
+        max-width: 1080px;
+        border-radius: 3px;
+        background-color: #fff;
     }
     
     @media screen and (max-width: 1024px) {
-    .work-preview {
-          flex-direction: column;
-    }
+        .work-preview {
+            flex-direction: column;
+        }
     }
     
     .work-preview__left {
@@ -1554,16 +1583,17 @@ html.hidden {
     }
     
     @media screen and (max-width: 425px) {
-    .work-preview__right {
-    padding: 15px;
-    }
+        .work-preview__right {
+            padding: 15px;
+        }
     }
     
     .work-preview__category {
-    display: flex;
-    width: 100%;
+        display: flex;
+        width: 100%;
+
         justify-content: flex-end;
-    text-transform: uppercase;
+        text-transform: uppercase;
     }
     
     .work-preview__category a {
@@ -1594,9 +1624,14 @@ html.hidden {
         align-items: center;
     margin-bottom: 20px;
     }
+
+    .work-preview__date{
+        margin-right: 15px;
+    }
     
     .work-preview__desc {
     display: flex;
+    flex-wrap: wrap;
     color: #979aa4;
     font-size: 16px;
     }
@@ -1608,10 +1643,10 @@ html.hidden {
     }
     
     .work-preview__portfolio {
-    color: #979aa4;
-    font-size: 16px;
-    display: flex;
-    margin-left: 35px;
+        color: #979aa4;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
     }
     
     .work-preview__portfolio a {
@@ -1656,14 +1691,23 @@ html.hidden {
     .chart-container {
         max-width: 100%;
         width: 100%;
+        display: flex;
+        flex-direction: row;
         overflow: auto;
     }
     
     .myChart {
         margin-right: 30px;
+        max-width: 100%;
         width: 100%;
         padding: 13px;
         border-radius: 3px;
+        @media screen and(max-width: 1200px) {
+            margin-right: 0;
+        }
+        @media screen and(max-width: 700px) {
+            
+        }
     }
     
     .chart {
@@ -1671,33 +1715,34 @@ html.hidden {
         overflow: hidden;
         justify-content: space-between;
         max-width: 100%;
+        flex-direction: column;
     }
     
     @media screen and (max-width: 1024px) {
-    .chart {
-          flex-direction: column;
-    }
+        .chart {
+            flex-direction: column;
+        }
     }
     
-    .chart .chart__info {
-    max-width: 250px;
-    width: 100%;
-    padding: 35px 45px;
-    align-self: flex-start;
-    border-radius: 3px;
-    margin-left: 30px;
-    background-color: #132d57;
+    .chart__info {
+        max-width: 250px;
+        width: 100%;
+        padding: 35px 45px;
+        align-self: flex-start;
+        border-radius: 3px;
+        background-color: #132d57;
         box-shadow: 0px 10px 32px 0px rgba(19, 45, 87, 0.05);
-        @media screen and(max-width: 1024px) {
+        @media screen and(max-width: 1200px) {
             margin-left: 0;
+            margin-top: 20px;
         }
     }
     
     @media screen and (max-width: 1024px) {
-    .chart .chart__info {
-    max-width: 100%;
-    margin-top: 30px;
-    }
+        .chart .chart__info {
+            max-width: 100%;
+            margin-top: 30px;
+        }
     }
     
     .chart__now {
@@ -1960,7 +2005,7 @@ html.hidden {
     bottom: -1px;
     left: 0;
     right: 0;
-    height: 2px;
+    height: 1px;
     background-color: #000;
         transform: scaleX(0);
     transition: 0.3s;
@@ -2213,15 +2258,11 @@ html.hidden {
     }
     }
     
-    .charts__row .chart__title {
-    margin-bottom: 70px;
-    }
-    
-    .charts__row .chart__title.chart-stats__title {
-    margin-bottom: 20px;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    .chart__title.chart-stats__title {
+        margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
     }
@@ -2241,7 +2282,6 @@ html.hidden {
         justify-content: flex-start;
         padding: 10px;
         min-width: 500px;
-        height: auto !important;
         @media screen and (max-width: 375px) {
             .myChart {
                 height: 200px;
@@ -2549,31 +2589,33 @@ html.hidden {
     }
     
     .popup {
-    border-radius: 3px;
-    background-color: white;
+        border-radius: 3px;
+        background-color: white;
         box-shadow: 0px 10px 32px 0px rgba(19, 45, 87, 0.05);
-    max-width: 523px;
-    width: 100%;
-    padding: 50px 60px;
-    opacity: 0;
-    visibility: hidden;
-    position: fixed;
-    z-index: 100000000;
-    top: 50%;
-    left: 50%;
+        max-width: 523px;
+        width: 100%;
+        padding: 50px 60px;
+        opacity: 0;
+        visibility: hidden;
+        position: fixed;
+        z-index: 100000000;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
-    margin: auto;
-    transition: 0.3s;
-    display: flex;
+        margin: auto;
+        transition: 0.3s;
+        display: flex;
         flex-direction: column;
         align-items: center;
+        max-height: 90vh;
+        overflow: auto;
     }
     
     @media screen and (max-width: 1024px) {
-    .popup {
-    max-width: 400px;
-    padding: 25px;
-    }
+        .popup {
+            max-width: 400px;
+            padding: 25px;
+        }
     }
     
     @media screen and (max-width: 425px) {
@@ -2588,33 +2630,40 @@ html.hidden {
     opacity: 1;
     visibility: visible;
     }
+
+    .popup__desc{
+        margin: 10px 0;
+    }
     
     .popup__link {
-    font-size: 14px;
-    color: #477ed7;
-    display: flex;
-    align-self: center;
-    text-transform: uppercase;
+        font-size: 14px;
+        color: #477ed7;
+        display: flex;
+        align-self: center;
+        text-transform: uppercase;
     }
     
     .popup__title {
-    font-size: 32px;
-    color: black;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 30px;
+        font-size: 32px;
+        color: black;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        @media screen and(max-width: 425px) {
+            font-size: 24px;
+        }
     }
     
     .popup__submit {
-    width: 100%;
-    margin-bottom: 25px;
+        width: 100%;
+        margin-bottom: 25px;
     }
     
     .popup form {
-    display: flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
-    width: 100%;
+        width: 100%;
     }
     
     .popup_close {
@@ -2633,6 +2682,10 @@ html.hidden {
             width: 15px;
             height: 15px;
             fill: #c4c4c4;
+        }
+        @media screen and(max-width: 425px) {
+            right: 0px;
+            top: 0px;   
         }
     }
     
@@ -2740,4 +2793,9 @@ html.hidden {
         padding: 10px;
         user-select: none;
     }
+}
+
+.already-button{
+    max-width: 300px;
+    margin: 20px 0;
 }

@@ -33,6 +33,54 @@ $('#my-form').validate({
 
 
 
+
+
+
+$('#form-already').validate({
+    rules: {
+        url: {
+            required: true,            
+        }
+    },
+
+    errorPlacement: function (error, element) {},
+
+    submitHandler: function() {
+        $("#form-already").css("display", "none");
+        $("#form-desc").css("display", "flex");
+    },
+
+});
+
+function copy(str){
+    let tmp   = document.createElement('INPUT'),
+    focus = document.activeElement; 
+
+    tmp.value = str;
+
+    document.body.appendChild(tmp);
+    tmp.select();
+    document.execCommand('copy');
+    document.body.removeChild(tmp);
+    focus.focus();
+};
+
+$(".copy-button").click(function(){
+    var str = $(".already-code").html();
+    copy(str);
+});
+
+var constraints = {
+    url: {
+      presence: true,
+      exclusion: {
+        message: " is not allowed"
+      }
+    },
+  };
+
+
+
 $('#my-form-2').validate({
     rules: {
         email: {

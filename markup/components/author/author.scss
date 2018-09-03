@@ -8,6 +8,9 @@
     @media screen and (max-width: 1370px){
         flex-wrap: wrap;
     }
+    @media screen and(max-width: 425px) {
+        flex-direction: column;
+    }
     &__item{
         display: flex;
         flex-direction: column;
@@ -26,17 +29,13 @@
             width: 33%;
             padding: 20px;
         }
-        @media screen and (max-width: 375px){
-            padding: 20px;
-        }
-        @media screen and (max-width: 320px){
+        @media screen and (max-width: 425px){
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             align-items: center;
-        }
-        @media screen and (max-width: 767px){
-
+            padding: 20px;
+            width: 100%;
         }
         &-person{
             max-width: 520px;
@@ -156,9 +155,13 @@
     }
 }
 .chart-block{
-    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
     &:first-child{
         margin-top: 0;
+    }
+    @media screen and(max-width: 1200px) {
+        flex-direction: column;
     }
 }
 
