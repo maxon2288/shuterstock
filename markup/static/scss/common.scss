@@ -1698,15 +1698,10 @@ html.hidden {
     
     .myChart {
         margin-right: 30px;
-        max-width: 100%;
-        width: 100%;
         padding: 13px;
         border-radius: 3px;
         @media screen and(max-width: 1200px) {
             margin-right: 0;
-        }
-        @media screen and(max-width: 700px) {
-            
         }
     }
     
@@ -2277,16 +2272,9 @@ html.hidden {
     
     .myChart, .myChartMulti, .myChartPie {
         background-color: #fff;
-        width: 100%;
         display: flex;
         justify-content: flex-start;
         padding: 10px;
-        min-width: 500px;
-        @media screen and (max-width: 375px) {
-            .myChart {
-                height: 200px;
-            }
-        }
     }
     
     
@@ -2798,4 +2786,14 @@ html.hidden {
 .already-button{
     max-width: 300px;
     margin: 20px 0;
+}
+
+.rate-info{
+    color: #aaa;
+    margin-bottom: 40px;
+    span{
+        color: #1f1f1f;
+        display: inline;
+        font-weight: 700;
+    }
 }
