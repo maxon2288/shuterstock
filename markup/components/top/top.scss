@@ -215,12 +215,13 @@
     }
     .place{
         position: static;
+        margin-bottom: 10px;
     }
     &__bottom{
         display: flex;
+        flex-wrap: wrap;
         width: 100%;
-        align-items: center;
-        justify-content: space-between;
+        margin-bottom: 0px;    
         @media screen and (max-width: 1440px){
             max-width: 400px;
         }

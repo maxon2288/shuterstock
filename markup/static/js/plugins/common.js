@@ -31,11 +31,6 @@ $('#my-form').validate({
 
 });
 
-
-
-
-
-
 $('#form-already').validate({
     rules: {
         url: {
@@ -78,9 +73,6 @@ var constraints = {
       }
     },
   };
-
-
-
 $('#my-form-2').validate({
     rules: {
         email: {

@@ -13,9 +13,60 @@
 
         <div class="main">
             <div class="wrapper">
-                {{> breadcrumbs/breadcrumbs}}
+
+                <div class="prev-content">
+                    <div class="main__top">
+                            {{> breadcrumbs/breadcrumbs}}
+
+                        
+                        <div class="m-title">Новости</div>
+                        
+                    </div>
+
+                </div>
+
+                <div class="main__content">
+                    <div class="main__left">
+                        <div class="m-title-3 top__top">
+
+                            Последние новости
+    
+                            <a href="#" class="m-link">
+                                Показать больше
+                            </a>
+                        </div>
+                        <div class="works">
+
+                            <div class="person-items">
+
+                                {{> news-item/news-item}}
+                                {{> news-item/news-item}}
+                                {{> news-item/news-item}}
+                                {{> news-item/news-item}}
+                                {{> news-item/news-item}}
+                                {{> news-item/news-item}}
+                                {{> news-item/news-item}}
+                                {{> news-item/news-item}}
+                                
+                                <!-- row -->
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="sidebar">
+                        {{> sidebar-last-news/sidebar-last-news}}
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
+
+
 
         {{> footer/footer}}
 
@@ -25,7 +76,7 @@
         <script>svg4everybody();</script>
 
         <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
-        <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+        <script src="%=static=%js/main%=hash=%.js"></script>
     </body>
 
 </html>
