@@ -77,7 +77,7 @@
                                     В портфолио автора <span> 1-я</span>
                                 </div>
 
-                                <div class="m-button-1 work-preview__button">Смотреть на shutterstock</div>
+                                <a href="#" class="m-button-1 work-preview__button">Смотреть на shutterstock</a>
 
                             </div>
                         </div>
@@ -95,38 +95,29 @@
 
                         <div class="chart">
                     
-                            <div class="m-title-3-light chart__title chart-stats__title">
-                                Общий рейтинг
+                            <div class="m-title chart__title chart-stats__title">
+                                рейтинг
                             </div>
-                        
-                        
-                            <div class="chart-container">
-                                <canvas class="myChart"></canvas>
-                                
+                            
+
+                            <div class="chart-block">
+
+                                <div class="chart-container chart-container__withinfo">
+                                    <canvas class="myChart"></canvas>
+                                </div>
+
                                 <div class="chart__info">
                                     <div class="chart__now">
-                                            Сейчас: 35.3
-                                    </div> 
-                                    <div class="chart__max chart__item">
-                                            max  - 231
+                                        Сейчас: 35.3
                                     </div>
-                                    <div class="chart__place place active">
-                                            132 место
-                                    </div>
-                                    <div class="chart__day-in-top chart__item">
-                                        Дней в топе:  83
-                                    </div>
-    
                                     <div class="chart__dynamic-title">
                                         Динамика:
                                     </div>
-                                    <div class="chart__dynamic chart__item">За день:  -0.19</div>
-                                    <div class="chart__dynamic chart__item">За неделю:  +0.3</div>
-                                    <div class="chart__dynamic chart__item">За 30 дней:  +3.28</div>
+                                    <div class="chart__dynamic chart__item">За день: -0.19</div>
+                                    <div class="chart__dynamic chart__item">За неделю: +0.3</div>
+                                    <div class="chart__dynamic chart__item">За 30 дней: +3.28</div>
                                 </div>
                             </div>
-
-                            
                         </div>
                         
 
@@ -143,76 +134,16 @@
                                 </div>
                             </div>
                             <div class="person-items">
-                                <div class="person-item">
-                                    <a href="#" class="person-item__top" style="background-image: url(static/img/content/works-img-1.jpg);">
-                                        <img src="static/img/content/works-img-1.jpg" alt="">
-                                    </a>
-        
-                                    <div class="person-item__bottom">
-                                        <div class="per-week">
-                                            +15143 за неделю
-                                        </div>
-                                        <a href="#" class="works__link">Viktoria Kurpas</a>
-                                    </div>
-        
-                                    <div class="place">
-                                        1 место
-                                    </div>
-                                </div>
-        
-                                <div class="person-item">
-                                    <a href="#" class="person-item__top" style="background-image: url(static/img/content/works-img-2.jpg);">
-                                        <img src="static/img/content/works-img-2.jpg" alt="">
-                                    </a>
-        
-                                    <div class="person-item__bottom">
-                                        <div class="per-week">
-                                            +15143 за неделю
-                                        </div>
-                                        <a href="#" class="works__link">Viktoria Kurpas</a>
-                                    </div>
-        
-                                    <div class="place">
-                                        1 место
-                                    </div>
-
-                                </div>
-                                
-                                <div class="person-item">
-                                    <a href="#" class="person-item__top" style="background-image: url(static/img/content/works-img-3.jpg);">
-                                        <img src="static/img/content/works-img-3.jpg" alt="">
-                                    </a>
-        
-                                    <div class="person-item__bottom">
-                                        <div class="per-week">
-                                            +15143 за неделю
-                                        </div>
-                                        <a href="#" class="works__link">Viktoria Kurpas</a>
-                                    </div>
-        
-                                    <div class="place">
-                                        1 место
-                                    </div>
-                                </div>
-        
-                                <div class="person-item">
-                                    <a href="#" class="person-item__top" style="background-image: url(static/img/content/works-img-4.jpg);">
-                                        <img src="static/img/content/works-img-4.jpg" alt="">
-                                    </a>
-        
-                                    <div class="person-item__bottom">
-                                        <div class="per-week">
-                                            +15143 за неделю
-                                        </div>
-                                        <a href="#" class="works__link">Viktoria Kurpas</a>
-                                    </div>
-        
-                                    <div class="place">
-                                        1 место
-                                    </div>
-                                </div>
+                                {{> work-item/work-item-2}}
+                                {{> work-item/work-item-2}}
+                                {{> work-item/work-item-2}}
+                                {{> work-item/work-item-2}}
                             </div>
                         </div>
+
+
+
+                        
 
                         
                     </div>
