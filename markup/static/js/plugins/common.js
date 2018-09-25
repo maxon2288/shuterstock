@@ -196,8 +196,14 @@ $('.main-block table').each(function () {
     $(this).wrap('<div class="main-table-container"></div>');
 });
 
+var dataVal = $(".option.selected").data("value");
+
+
 $('.myChart').each(function(){
     var it = $(this);
+
+    var dataChart = it.data("chart").split(",");
+
 
     var ctx = it;
     var chart = new Chart(ctx, {
@@ -207,20 +213,22 @@ $('.myChart').each(function(){
         // The data for ou  r dataset
         data: {
             labels: ["авг", "сен", "окт", "ноя", "дек", "2018", "фев", "мар", "апр", "май", "23", "24", "25", "26", "27", "28", "29", "30", "31", "июн", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-
             datasets: [{
-                data: [20,24,26,26,30,30,30,26,36,32,33,32,32,31,32,33,32,32,32,30,34,30,31,32,33,30,34,30,31,32,33],
-                backgroundColor: 'transparent',
-                borderWidth: 1,
-                borderColor: '#1b203f',
-                pointBackgroundColor: "#488af3",
-                pointRadius: 2,
-                pointBorderColor: "#488af3",
-            },],
-            
+                    data: dataChart,
+                    backgroundColor: 'transparent',
+                    borderColor: '#1b203f',
+                    pointBackgroundColor: "#488af3",
+                    borderWidth: 2,
+                    pointRadius: 3,
+                    pointBorderColor: "#488af3",
+                }
+            ],
         },
         // Configuration options go here
         options: {
+            title: {
+                display: false,
+            },
             responsive: true,
             legend: {
                 display: false,
@@ -229,7 +237,7 @@ $('.myChart').each(function(){
                 mode: 'nearest',
                 intersect: true
             },
-            lineTension: true,
+            elements : { line : { tension:0}},
             tooltips: {
                 mode: 'index',
                 intersect: false,
@@ -243,13 +251,17 @@ $('.myChart').each(function(){
             }
         }
     });
+    
 
 });
+//     myLineChart.data.datasets[0].data[2] = 50;
+// }
 
 $('.myChartMulti').each(function(){
     var it = $(this);
 
     var ctx1 = it;
+    var data = $(this).closest('.chart').find('select').val().split(',');
     var chart = new Chart(ctx1, {
         // The type of chart we want to create
         type: 'line',
@@ -260,35 +272,16 @@ $('.myChartMulti').each(function(){
             labels: ["авг", "сен", "окт", "ноя", "дек", "2018", "фев", "мар", "апр", "май", "23", "24", "25", "26", "27", "28", "29", "30", "31", "июн", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             datasets: [
                 {
-                    data: [20,24,26,26,30,30,30,26,36,32,33,32,32,31,32,33,32,32,32,30,34,30,31,32,33,30,34,30,31,32,33],
+                    data: data,
                     backgroundColor: 'transparent',
-                    borderWidth: 1,
+                    borderWidth: 2,
+                    pointRadius: 3,
                     borderColor: '#1b203f',
                     pointBackgroundColor: "#488af3",
-                    pointRadius: 2,
                     pointBorderColor: "#488af3",
-                },{
-                    data: [18,22,24,24,28,28,28,24,20,30,31,30,30,29,30,31,30,30,30,28,32,28,29,30,31,30,34,30,31,32,33],
-                    backgroundColor: 'transparent',
-                    borderColor: '#6c1515',
-                    pointRadius: 2,
-                    borderWidth: 1,
-                    pointBackgroundColor: "#e92e2e",
-                    pointBorderColor: "#e92e2e",
-                },{
-                    data: [16,20,22,22,26,26,26,22,10,28,29,28,28,27,28,29,28,28,28,26,30,26,27,28,29,30,34,30,31,32,33],
-                    backgroundColor: 'transparent',
-                    pointRadius: 2,
-                    borderWidth: 1,
-                    borderColor: '#167641',
-                    pointBackgroundColor: "#19c466",
-                    pointBorderColor: "#19c466",
-                }
+                 }
             ],
-            
         },
-
-        // Configuration options go here
         options: {
             legend: {
                 display: false,
@@ -297,6 +290,7 @@ $('.myChartMulti').each(function(){
                 mode: 'nearest',
                 intersect: true
             },
+            elements : { line : { tension:0}},
             lineTension: true,
             tooltips: {
                 mode: 'index',
@@ -310,13 +304,25 @@ $('.myChartMulti').each(function(){
                 }]
             }
         }
+
     });
+    var elem = $(this).closest('.chart').find('select');
+    $(elem).change(function(){
+        var arr = $(this).val().split(',');
+        chart.data.datasets[0].data =  arr;
+        chart.update();
+    })
 
 });
 
 
+var dataPie = $(".myChartPie").data("pie").split(",");
+console.log(dataPie);
+
+
 $('.myChartPie').each(function(){
     var it = $(this);
+    
 
     var ctxPie = it;
     var myPieChart = new Chart(ctxPie, {
@@ -329,9 +335,7 @@ $('.myChartPie').each(function(){
         // The data for ou  r dataset
 			data: {
 				datasets: [{
-					data: [
-                        7,11,23,10,16,17,57
-                    ],
+					data: dataPie,
 
                     borderWidth: 0,
 
@@ -342,7 +346,17 @@ $('.myChartPie').each(function(){
                         '#3460a6',
                         '#488af3',
                         '#2859a9',
-                        '#12739c'
+                        '#12739c',
+                        '#3460a6',
+                        '#488af3',
+                        '#2859a9',
+                        '#12739c',
+                        '#00a2d0',
+                        '#48bdf3',
+                        '#093479',
+                        '#3460a6',
+                        '#488af3',
+                        '#2859a9',
                     ], 
                 }],
                 

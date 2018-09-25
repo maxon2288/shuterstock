@@ -1305,6 +1305,10 @@ html.hidden {
     color: black;
     text-align: center;
     margin: 0 3px
+        
+    }
+    .news__title:hover{
+        text-decoration: underline;
     }
     
     .place {
@@ -2303,8 +2307,8 @@ html.hidden {
     }
     
     .charts__row {
-    display: flex;
-    flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         @media screen and(max-width: 768px) {
             flex-direction: column;
@@ -2316,6 +2320,7 @@ html.hidden {
         margin-bottom: 30px;
         margin-top: 15px;
         width: 49%;
+        margin-right: 0;
         flex-direction: column;
         @media screen and(max-width: 768px) {
             width: 100%;
@@ -2327,6 +2332,13 @@ html.hidden {
     .charts__row .chart {
     max-width: 100%;
     }
+    }
+
+    .chart{
+        .position__desc {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
     }
     
     .chart__title.chart-stats__title {

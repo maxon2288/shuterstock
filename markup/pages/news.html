@@ -31,8 +31,8 @@
 
                             Последние новости
     
-                            <a href="#" class="m-link">
-                                Показать больше
+                            <a href="new.html" class="m-link capt-link callPopup " data-popupBlock="modal-news">
+                                Предложить новость
                             </a>
                         </div>
                         <div class="works">
@@ -53,11 +53,13 @@
 
                         </div>
 
+                        {{> pagination/pagination}}
+
 
                     </div>
 
                     <div class="sidebar">
-                        {{> sidebar-last-news/sidebar-last-news}}
+                        {{> sidebar-stats/sidebar-stats}}
 
                     </div>
 
@@ -66,11 +68,7 @@
             </div>
         </div>
 
-
-
         {{> footer/footer}}
-
-
 
         <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
         <script>svg4everybody();</script>
