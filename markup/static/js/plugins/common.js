@@ -198,12 +198,12 @@ $('.main-block table').each(function () {
 
 var dataVal = $(".option.selected").data("value");
 
-
 $('.myChart').each(function(){
     var it = $(this);
 
     var dataChart = it.data("chart").split(",");
 
+    var dataLabel = it.data('label').split(",");
 
     var ctx = it;
     var chart = new Chart(ctx, {
@@ -212,7 +212,7 @@ $('.myChart').each(function(){
 
         // The data for ou  r dataset
         data: {
-            labels: ["авг", "сен", "окт", "ноя", "дек", "2018", "фев", "мар", "апр", "май", "23", "24", "25", "26", "27", "28", "29", "30", "31", "июн", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+            labels: dataLabel,
             datasets: [{
                     data: dataChart,
                     backgroundColor: 'transparent',
@@ -259,7 +259,7 @@ $('.myChart').each(function(){
 
 $('.myChartMulti').each(function(){
     var it = $(this);
-
+    var dataLabelMulti = $(this).closest('.chart').find('select option:nth-child(1)').data("label").split(',');
     var ctx1 = it;
     var data = $(this).closest('.chart').find('select').val().split(',');
     var chart = new Chart(ctx1, {
@@ -269,7 +269,7 @@ $('.myChartMulti').each(function(){
 
         // The data for ou  r dataset
         data: {
-            labels: ["авг", "сен", "окт", "ноя", "дек", "2018", "фев", "мар", "апр", "май", "23", "24", "25", "26", "27", "28", "29", "30", "31", "июн", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+            labels: dataLabelMulti,
             datasets: [
                 {
                     data: data,
