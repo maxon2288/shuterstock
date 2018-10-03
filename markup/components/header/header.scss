@@ -6,6 +6,13 @@
     left: 0;
     width: 100%;
     z-index: 10000000;
+    &__landing{ 
+        position: static;
+        &-right {
+            display: flex;
+            max-width: 610px;
+        }
+    }
     .contact-mail{
         @media screen and (max-width: 425px){
             display: none;
@@ -14,6 +21,79 @@
 
     @media screen and(max-width: 768px) {
         padding: 7px 0;
+    }
+
+    &__submenu {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        min-height: auto;
+        background-color: #fff;
+        box-shadow: 0px 3px 10px 0px rgba(19, 45, 87, 0.301);
+        border-radius: 3px;
+        transform: translateY(10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.2s;
+        font-size: 16px;
+        width: 250px;
+        cursor: default;
+        &-button {  
+            padding: 4px 0;
+            height: 44px;
+            position: relative;
+            width: 90px;
+            justify-content: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            border-radius: 3px;
+            border: 2px solid transparent;
+            transition: 0.2s;
+            &:hover {
+                border: 2px solid #bbb;
+                background-color: #ddd;
+                .header__submenu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0px);
+                }
+            }
+            
+        }
+        &-icon-2 {
+            width: 15px;
+            height: 15px;
+            margin-left: 10px;
+            fill: #488af3;
+
+        }
+        &-icon {
+            width: 25px;
+            height: 25px;
+            fill: #24519b;
+            
+        }
+        &-text{
+            padding: 7px 10px;
+            color: #70747c;  
+            a {
+                display: inline;
+            }
+        }
+        &-item {
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+            color: #70747c;
+            a {
+                transition: 0s;
+                padding: 5px 10px;
+                color: #70747c;  
+                &:hover {
+                    background-color: #eef1f5;
+                }
+            }
+        }
     }
     
     &__bottom{
@@ -100,6 +180,9 @@
     color: rgb(255, 255, 255);
     @media screen and (max-width: 1024px){
         margin-left: 0;
+    }
+    &-landing{
+        color: #8b92a3;
     }
       
 }

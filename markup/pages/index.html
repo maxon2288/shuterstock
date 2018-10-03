@@ -5,213 +5,123 @@
         {{> head/head}}
     </head>
 
-    <body class="page">
+    <body class="page ptn">
 
-
-        {{> header/header}}
-
-
-        <div class="main">
+        <div class="header header__landing">
             <div class="wrapper">
-
-                <div class="prev-content">
-                    <div class="main__top">
-                        <div class="m-title">Рейтинг портфелей</div>
-
+                <div class="header__bottom-left">
+                    <a href="index.html" class="microstock">
+                        <img src="../../static/img/content/logo-2.png" alt="">
+                    </a>
+                    <div class="microstock__desc microstock__desc-landing">
+                        Рейтинг стоковых
+                        изображений
                     </div>
-
-                    {{> category/category}}
-
                 </div>
 
-                <div class="main__content">
-                    <div class="main__left">
-                        <div class="m-title-3 top__top">
+                <div class="header__landing-right">
+                    <div class="contact-mail">
+                        <img src="../static/img/content/mail.png" alt="">
+                        <a href="mail:contact2018@mail.ru" class="contact-mail__link" target="_blank">
+                            contact2018@mail.ru
+                        </a>
+                    </div>
+        
+                    <div class="lang">
+                        <a href="#" class="lang__en lang__item m-button-2 active">ru</a>
+                        <a href="#" class="lang__ru lang__item m-button-2">en</a>
+                    </div>
+                    <a href="#" class="m-button-2 button-sign callPopup " data-popupBlock="popup-sign">Войти</a>    
+                </div>
+            </div>
+        </div>
 
-                            Топ 100 работ авторов
+        
+
+        <div class="first">
+            <div class="top-line">
+                <div class="wrapper">
+                    <div class="top-line__menu">
+                        <a href="#" class="header-menu__link">Топ портфелей</a>
+                        <a href="#" class="header-menu__link">Топ 100 работ</a>
+                        <a href="#" class="header-menu__link">FAQ</a>
+                        <a href="#" class="header-menu__link">Контакты</a>
+                    </div>
     
-                            <a href="#" class="m-link">
-                                Показать больше
-                            </a>
-                        </div>
-                        <div class="works">
-
-                            <div class="person-items">
-
-                                {{> work-item/work-item}}
-                                {{> work-item/work-item}}
-                                {{> work-item/work-item}}
-                                {{> work-item/work-item}}
-
-                                <!-- row -->
-
-                                {{> work-item/work-item}}
-                                {{> work-item/work-item}}
-                                {{> work-item/work-item}}
-                                {{> work-item/work-item}}
-                                
-                                <!-- row -->
-                            </div>
-
-                        </div>
-
-                        <div class="top">
-                            <div class="top__top">
-                                <div class="m-title-3">
-                                    Топ портфелей
-                                </div>
-
-                                <div class="m-link-cont">
-                                    <a href="#" class="m-link">
-                                        Показать больше
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="top__items">
-                                {{> top-item/top-item}}
-                                {{> top-item/top-item}}
-                                {{> top-item/top-item}}
-                            </div>
-                        </div>
-
-                        <div class="top">
-                            <div class="top__top">
-                                <div class="m-title-3">
-                                    по росту рейтинга за месяц
-                                </div>
-
-                                <div class="m-link-cont">
-                                    <a href="#" class="m-link">
-                                        Показать больше
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="top__items">
-                                {{> top-item/top-item}}
-                                {{> top-item/top-item}}
-                                {{> top-item/top-item}}
-                            </div>
-                        </div>
-
-                        <div class="top">
-                            <div class="top__top">
-                                <div class="m-title-3">
-                                    по количеству работ
-                                </div>
-
-                                <div class="m-link-cont">
-                                    <a href="#" class="m-link">
-                                        Показать больше
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="top__items">
-                                {{> top-item/top-item}}
-                                {{> top-item/top-item}}
-                                {{> top-item/top-item}}
-                            </div>
-                        </div>
-
-                        <div class="top">
-                            <div class="top__top">
-                                <div class="m-title-3">
-                                    по количеству добавленного ща месяц
-                                </div>
-
-                                <div class="m-link-cont">
-                                    <a href="#" class="m-link">
-                                        Показать больше
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="top__items">
-                                {{> top-item/top-item}}
-                                {{> top-item/top-item}}
-                                {{> top-item/top-item}}
-                            </div>
-                        </div>
-
+                    <div class="top-line__link">
+                        <a href="#" class="m-link">Начать тестовый период за $3</a>
                     </div>
-
-                    <div class="sidebar">
-                        {{> sidebar-stats/sidebar-stats}}
-                        {{> sidebar-celebrate/sidebar-celebrate}}
-                        {{> sidebar-last-news/sidebar-last-news}}
-
-                    </div>
-
                 </div>
-
             </div>
-        </div>
 
-
-        <div class="menu-container">
             <div class="wrapper">
-                <div class="content-bottom">
-                    <div class="m-title">New top images by categories</div>
+                <div class="first__container">
+                    <div class="m-title">Инструменты для увеличения прибыли, <br>
+                        исследования и мониторинга вашей ниши</div>
 
-                    <div class="menu">
-                        <div class="menu__row">
-                            <div class="menu__col">
-                                <a href="#" class="menu__link">Abstract</a>
-                                <a href="#" class="menu__link">Animals/Wildlife</a>
-                                <a href="#" class="menu__link">The Arts</a>
-                                <a href="#" class="menu__link">Backgrounds/Textures</a>
-                                <a href="#" class="menu__link">Beauty/Fashion</a>
-                                <a href="#" class="menu__link">Buildings/Landmarks</a>
-                                <a href="#" class="menu__link">Business/Finance</a>
-                                <a href="#" class="menu__link">Celebritie</a>
-                            </div>
+                    <div class="m-desc">
+                        Microstockstar помогает вам узнать, почему ваши конкуренты занимают столь высокие позиции и что вам нужно сделать, чтобы обогнать их. Данный инструмент поможет вам проанализировать продающие темы, лидеров рейтинга,трендовые направления рынка микростоков и спланировать ваши будущие фотосессии, видео и иллюстрации
+                    </div>
 
-                            <div class="menu__col">
-                                <a href="#" class="menu__link">Editorial</a>
-                                <a href="#" class="menu__link">Education</a>
-                                <a href="#" class="menu__link">Food and Drink</a>
-                                <a href="#" class="menu__link">Healthcare/Medical</a>
-                                <a href="#" class="menu__link">Holidays
+                    <a href="#" class="m-button-1">
+                        Начать тестовый период за $3
+                    </a>
+
+                    <div class="first__img">
+                        <img src="%=static=%img/content/macbook.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tools">
+            <div class="wrapper">
+                <div class="tools__container">
+                    <div class="m-title">
+                            Инструменты, доступные с microstockstar
+                    </div>
+
+                    <div class="tools__tabs">
+                        <ul class="tools__tab">
+                            <li>
+                                <a href="#tab-1">
+                                    <div class="tools__img-cont">
+                                    </div>
+
+                                    <div class="tools__text">
+                                        Анализ портфелей
+                                    </div>
                                 </a>
-                                <a href="#" class="menu__link">Illustrations/Clip-Art</a>
-                                <a href="#" class="menu__link">Industrial</a>
+                            </li>
+
+                        </ul>
+                        <div class="tools__content" id="tab-1">
+                            <div class="tools__left">
+                                <div class="tools__title">
+                                        Анализ портфелей
+                                </div>
+
+                                <div class="m-desc tools__right">
+                                        Один из главных инструментов, благодаря которому вы сможете не только понять слабые и сильные стороны своего портфолио, но и изучить работы попавшие в топ. Этот инструмент доступен не только для вашего портфолио, но и для всех авторов. Основываясь на полученной информации вы сможете делать более целенаправленный выбор при планировании ваших будущих фотосессий, видеоклипов и иллюстраций. 
+                                </div>
+                                
+                                <a href="#" class="m-link">
+                                        Ссылка
+                                </a>
                             </div>
 
-                            <div class="menu__col">
-                                <a href="#" class="menu__link">Interiors</a>
-                                <a href="#" class="menu__link">Miscellaneous</a>
-                                <a href="#" class="menu__link">Nature</a>
-                                <a href="#" class="menu__link">Objects</a>
-                                <a href="#" class="menu__link">Parks/Outdoor</a>
-                                <a href="#" class="menu__link">People</a>
-                                <a href="#" class="menu__link">Religion</a>
-                            </div>
-
-                            <div class="menu__col">
-                                <a href="#" class="menu__link">Interiors</a>
-                                <a href="#" class="menu__link">Miscellaneous</a>
-                                <a href="#" class="menu__link">Nature</a>
-                                <a href="#" class="menu__link">Objects</a>
-                                <a href="#" class="menu__link">Parks/Outdoor</a>
-                                <a href="#" class="menu__link">People</a>
-                                <a href="#" class="menu__link">Religion</a>
+                            <div class="tools__right">
+                                <img src="%=static=%img/content/tab-1.jpg" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="sidebar"></div>
-
             </div>
         </div>
 
-        <!-- Include your modules here -->
-
-        <div class="page__buffer"></div>
-
-        {{> footer/footer}}
+        {{> footer/footer-2}}
 
 
 

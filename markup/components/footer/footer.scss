@@ -19,6 +19,15 @@
             flex-wrap: wrap;
         }
     }
+    .header-menu{
+        &__link{
+            color: #fff !important;
+            &:before{
+                background-color: #fff !important;
+            }
+        }
+        
+    }
     .lang{
         margin-right: 0;
         margin-left: 10px;
@@ -95,15 +104,7 @@
             }
         }
     }
-    .header-menu{
-        &__link{
-            color: #fff;
-            &:before{
-                background-color: #fff;
-            }
-        }
-        
-    }
+    
     .header__bottom-left{
         width: auto;
         display: flex;
@@ -158,4 +159,5 @@
         }
     }
 }
+
 

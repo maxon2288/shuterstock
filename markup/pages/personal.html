@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+    <head>
+        {{> head/head head.defaults}}
+    </head>
+
+    <body class="page">
+        %=symbols=%
+
+        <section class="page__wrapper">
+
+            <!-- Include your modules here -->
+
+            <div class="header-container">
+                <header class="header">
+                    <div class="wrapper">
+            
+                        <div class="humburger-overlay"></div>
+                        <div class="header-menu">
+                            <div class="popup_close">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
+                            </div>
+                            <a href="top-portfolio.html" class="header-menu__link">Топ портфелей</a>
+                            <a href="top-hundred.html" class="header-menu__link">Топ 100 работ</a>
+                            <a href="rate.html" class="header-menu__link">Тарифы</a>
+                            <a href="room.html" class="header-menu__link">личный кабинет</a>
+                            <a href="news.html" class="header-menu__link">Новости</a>
+                            <a href="faq.html" class="header-menu__link">FAQ</a>
+                            <a href="contacts.html" class="header-menu__link">Контакты</a>
+                        </div>
+            
+                        <div class="menu-open">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                
+                        <div class="contact-mail">
+                            <img src="../static/img/content/mail.png" alt="">
+                            <a href="mail:contact2018@mail.ru" class="contact-mail__link" target="_blank">
+                                contact2018@mail.ru
+                            </a>
+                        </div>
+            
+                        <div class="lang">
+                            <a href="#" class="lang__en lang__item m-button-2 active">ru</a>
+                            <a href="#" class="lang__ru lang__item m-button-2">en</a>
+                        </div>
+
+                        <div class="header__submenu-button">
+                            {{Icon iconName="user" className="header__submenu-icon"}}
+                            {{Icon iconName="user-arrow" className="header__submenu-icon-2"}}
+
+                            <div class="header__submenu">
+
+                                <div class="header__submenu-item">
+
+                                    <a href="#" class="header__submenu-link">
+                                        Моя страница
+                                    </a>
+
+                                </div>
+
+                                <div class="header__submenu-item">
+                                    <a href="#" class="header__submenu-link">
+                                        Я являюсь автором 
+                                    </a>
+                                </div>
+
+                                <div class="header__submenu-item">
+                                    <div class="header__submenu-text">
+                                        Тариф:  <b>профессиональный</b>
+                                    </div>
+                                </div>
+
+                                <div class="header__submenu-item">
+                                    <div class="header__submenu-text">
+                                        Осталось дней: <b>22</b>
+                                    </div>
+                                </div>
+                                <div class="header__submenu-item">
+                                    <a href="#" class="header__submenu-link">
+                                        Купить тариф
+                                    </a>
+                                    
+                                </div>
+
+                                <div class="header__submenu-item">
+                                    <a href="#" class="header__submenu-link">Выйти</a>
+                                </div>
+                            </div>
+                        </div>
+                                                
+                    </div>
+                </header>
+            
+                <div class="header__bottom">    
+                    <div class="wrapper">
+                        <div class="header__bottom-left">
+                            <a href="index.html" class="microstock">
+                                <img src="../../static/img/content/logo.png" alt="">
+                            </a>
+                            <div class="microstock__desc">
+                                Рейтинг стоковых
+                                изображений
+                            </div>
+                        </div>
+                        
+                        <div class="header__bottom-right">
+                            <div class="search">
+                                <input type="text" class="search__field m-field" placeholder="ПОИСК СТОКОВЫХ ИЗОБРАЖЕНИЙ">
+                                <div class="select-container">
+                                    <select name="select" id="select" class="select">
+                                        <option> all images</option>
+                                        <option>photos</option>
+                                        <option>vectors</option>
+                                        <option>footage</option>
+                                    </select>
+                                </div>
+                                <a href="#" class="m-button-1">
+                                    НАЙТИ
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="page__buffer"></div>
+
+        </section>
+
+
+        <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
+        <script src="%=static=%js/main%=hash=%.js"></script>
+    </body>
+
+</html>

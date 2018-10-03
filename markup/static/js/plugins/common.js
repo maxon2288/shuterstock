@@ -70,8 +70,6 @@ $('.form-already').each(function() {
     });
 });
 
-
-
 function copy(str){
     let tmp   = document.createElement('INPUT'),
     focus = document.activeElement; 
@@ -138,6 +136,11 @@ new WOW({
 }).init();
 
 $( ".tabs" ).tabs({
+    hide: { effect: "fade", duration: 150 },
+    show: { effect: "fade", duration: 150 },
+});
+
+$( ".tools__tabs" ).tabs({
     hide: { effect: "fade", duration: 150 },
     show: { effect: "fade", duration: 150 },
 });
@@ -245,7 +248,6 @@ $('.myChart').each(function(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
                     }
                 }]
             }
@@ -259,7 +261,8 @@ $('.myChart').each(function(){
 
 $('.myChartMulti').each(function(){
     var it = $(this);
-    var dataLabelMulti = $(this).closest('.chart').find('select option:nth-child(1)').data("label").split(',');
+    var dataLabelMulti = $(this).closest('.chart').find('select option:nth-child(1)').data("label").split(', ');
+    console.log(dataLabelMulti)
     var ctx1 = it;
     var data = $(this).closest('.chart').find('select').val().split(',');
     var chart = new Chart(ctx1, {
@@ -299,7 +302,6 @@ $('.myChartMulti').each(function(){
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
                     }
                 }]
             }
@@ -315,20 +317,14 @@ $('.myChartMulti').each(function(){
 
 });
 
-
-var dataPie = $(".myChartPie").data("pie").split(",");
-console.log(dataPie);
-
-
 $('.myChartPie').each(function(){
     var it = $(this);
-    
-
+    var dataPie = it.data("pie").split(",");
+    var dataPieLabel = it.data("pielabel").split(",");
     var ctxPie = it;
     var myPieChart = new Chart(ctxPie, {
         // The type of chart we want to create
         type: 'pie',
-        
         segmentShowStroke: false,
         segmentStrokeWidth: 0,
 
@@ -359,17 +355,7 @@ $('.myChartPie').each(function(){
                         '#2859a9',
                     ], 
                 }],
-                
-                labels: [
-                    'Россия',
-                    'США',
-                    'Канада',
-                    'Франция',
-                    'Испания',
-                    'англия',
-                    'барсик'
-                ],
-                 
+                labels: dataPieLabel,
             },
             
 			options: {
