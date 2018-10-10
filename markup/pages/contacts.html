@@ -94,7 +94,18 @@
                     searchControlProvider: 'yandex#search'
                 });
 
+                
+                var myPlacemark = new ymaps.Placemark([x, y], {
+                    // Хинт показывается при наведении мышкой на иконку метки.
+                    hintContent: 'Содержимое всплывающей подсказки',
+                    // Балун откроется при клике по метке.
+                    balloonContent: 'Содержимое балуна'
+                });
+
+                myMap.geoObjects.add(myPlacemark);
             }
+
+            
         });
         
     </script>   

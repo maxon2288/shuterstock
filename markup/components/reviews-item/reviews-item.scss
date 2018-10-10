@@ -1,0 +1,105 @@
+.reviews{ 
+    overflow: hidden;
+    padding-top: 90px;
+    padding-bottom: 55px;
+    max-width: 1290px;
+    margin: 0 auto;
+    &__container{
+        display: flex;
+        flex-direction: column;
+    }
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        width: calc(33% - 20px);
+        margin-right: 30px;
+        margin-bottom: 30px;
+        &:nth-child(3) {
+            margin-right: 0;
+        }
+        &:nth-child(3n+2) {
+            animation-delay: 0.2s
+        }
+        &:nth-child(3n+3) {
+            animation-delay: 0.4s;
+            margin-right: 0;
+        }
+        @media screen and(max-width: 768px) {
+            width: calc(50% - 15px);
+            &:nth-child(3) {
+                margin-right: 30px;
+            }
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+        }
+        @media screen and(max-width: 550px) {
+            width: 100%;
+            margin-right: 0;
+            &:nth-child(3) {
+                margin-right: 0;
+            }
+            margin-bottom: 50px;
+        }
+        &-content{
+            padding: 30px;
+            position: relative;
+            margin-bottom: 30px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 10px 32px 0px rgba(19, 45, 87, 0.05);
+            font-style: italic;
+            font-family: geometria;
+            font-size: 18px;
+            &:before{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 100%;
+                border: 15px solid #ffffff;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+            }
+        }
+        &-title{
+            font-weight: 600;
+        }
+        &-desc{
+            font-size: 16px;
+            color: #979aa4;
+        }
+    }
+    &__item-bottom{
+        display: flex;
+        align-items: center;
+    }  
+    &__img-cont {
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+}
+
+.test {
+    padding-top: 90px;
+    padding-bottom: 90px;   
+    background-color: #fff;
+    &__container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .m-title{
+        margin-bottom: 10px;
+    }
+    .m-button-1{
+        align-self: center;
+    }
+}

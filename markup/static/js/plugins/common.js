@@ -31,7 +31,6 @@ $('#my-form').validate({
 
 });
 
-
 $("#form-news").validate({
     rules: {
         email: {
@@ -52,6 +51,15 @@ $("#form-news").validate({
 
 });
 
+$('.m-img-cont').each(function(){
+    var imgCont = $(this).find('img').attr('src');
+    $(this).css('background-image','url('+imgCont+')');
+});
+
+new WOW({
+    mobile: false,
+}).init();
+
 $('.form-already').each(function() {
     $(this).validate({
         rules: {
@@ -70,12 +78,22 @@ $('.form-already').each(function() {
     });
 });
 
+var mySwiper = new Swiper('.tools-tab', {
+    speed: 400,
+    spaceBetween: 10,
+    slidesPerView: 7,
+    breakpoints: {
+        1100: {
+            slidesPerView: 4,
+        }
+    },
+});
+
+
 function copy(str){
     let tmp   = document.createElement('INPUT'),
     focus = document.activeElement; 
-
     tmp.value = str;
-
     document.body.appendChild(tmp);
     tmp.select();
     document.execCommand('copy');
@@ -143,7 +161,9 @@ $( ".tabs" ).tabs({
 $( ".tools__tabs" ).tabs({
     hide: { effect: "fade", duration: 150 },
     show: { effect: "fade", duration: 150 },
+
 });
+
 
 $(".accordion").accordion ({
     hide: { effect: "fade", duration: 150 },
@@ -261,10 +281,12 @@ $('.myChart').each(function(){
 
 $('.myChartMulti').each(function(){
     var it = $(this);
-    var dataLabelMulti = $(this).closest('.chart').find('select option:nth-child(1)').data("label").split(', ');
+    var dataLabelMulti = $(this).data("label").split(', ');
     console.log(dataLabelMulti)
     var ctx1 = it;
-    var data = $(this).closest('.chart').find('select').val().split(',');
+    var data = $(this).closest('.chart').find('select option').val().split(',');
+    console.log(data)
+
     var chart = new Chart(ctx1, {
         // The type of chart we want to create
         type: 'line',
@@ -341,18 +363,30 @@ $('.myChartPie').each(function(){
                         '#093479',
                         '#3460a6',
                         '#488af3',
-                        '#2859a9',
                         '#12739c',
-                        '#3460a6',
-                        '#488af3',
-                        '#2859a9',
-                        '#12739c',
-                        '#00a2d0',
-                        '#48bdf3',
-                        '#093479',
-                        '#3460a6',
-                        '#488af3',
-                        '#2859a9',
+                        '#1090b5',
+                        '#1a4d8c',
+                        '#196bd1',
+                        '#144077',
+                        '#1625ad',
+                        '#4a57ce',
+                        '#2997ad',
+                        '#137a8e',
+                        '#347bbc',
+                        '#084a87',
+                        '#4c5bbf',
+                        '#213199',
+                        '#126d87',
+                        '#52a1b7',
+                        '#336baa',
+                        '#164272',
+                        '#374da3',
+                        '#155f9b',
+                        '#29b7bc',
+                        '#1f57a5',
+                        '#1058bc',
+                        '#26639b',
+                        '#1f45c4',
                     ], 
                 }],
                 labels: dataPieLabel,
