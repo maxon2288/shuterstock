@@ -63,7 +63,7 @@
                                 </div>
 
                                 <div class="header__submenu-item">
-                                    <a href="#" class="header__submenu-link">
+                                    <a href="#" class="header__submenu-link callPopup" data-PopupBlock="already">
                                         Я являюсь автором 
                                     </a>
                                 </div>
@@ -87,8 +87,12 @@
                                 </div>
 
                                 <div class="header__submenu-item">
-                                    <a href="#" class="header__submenu-link">Выйти</a>
+                                    <form action="#">
+                                        <button class="header__submenu-link">Выйти</button>                                        
+                                    </form>
                                 </div>
+
+                                
                             </div>
                         </div>
                                                 
@@ -129,9 +133,10 @@
 
 
 
-            <div class="page__buffer"></div>
 
         </section>
+
+        {{> footer/footer}}
 
 
         <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>

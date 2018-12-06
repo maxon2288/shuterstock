@@ -1,54 +1,290 @@
-$('#my-form').validate({
-    rules: {
-        email: {
-            required: true,
-            email: true,
+$('.my-form').each(function() {
+    $(this).validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            phone: {
+                required: true,
+                    digits: true,
+            },
+            messages: {
+                required: true,
+            },
+            name: {
+                required: false,
+            },
+            url: {
+                required: true,
+                url: true
+            },
+            password: {
+                required: true,            
+                
+            },
+            passwordYet: {
+                required: true,  
+                equalTo: "#password"          
+            }
         },
-        phone: {
-            required: true,
-                digits: true,
-        },
-        messages: {
-            required: true,
-        },
-        name: {
-            required: false,
-        },
-        password: {
-            required: true,            
-        },
-        passwordYet: {
-            required: true,            
-        }
-    },
+    
+        errorPlacement: function (error, element) {},
 
-    errorPlacement: function (error, element) {},
+    
+        submitHandler: function() {
+            it.find('input').val('');
 
-    submitHandler: function() {
-        $('#my-form').trigger('reset');
-        alert("Ожидайте звонка!");
-    },
-
+            $.ajax({
+                type: 'POST',
+                url: 'mail.php',
+                data: data,
+                success: function(data){
+                }
+            });
+        },  
+        
+    
+    });
+});
+$(document).ready(function() {
+    $('.lang__ru').click();
+    $(".lang__ru").click(function () {
+    console.log('dsdsd');
+    });
+});
+$('.search').each(function() {
+    var it = $(this);
+    it.validate({
+        rules: {
+            search: {
+                required: true,
+            }
+        },
+    
+        errorPlacement: function (error, element) {},
+    });
 });
 
-$("#form-news").validate({
-    rules: {
-        email: {
-            required: true,
-            email: true,
+$('.form-already').each(function() {
+    var it = $(this);
+    $(this).validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            phone: {
+                required: true,
+                    digits: true,
+            },
+            messages: {
+                required: true,
+            },
+            url: {
+                required: true,
+                url: true
+            },
+            name: {
+                required: false,
+            },
+            password: {
+                required: true,            
+                
+            },
+            passwordYet: {
+                required: true,  
+                equalTo: "#password"          
+            }
         },
-        name: {
-            required: false,
+    
+        errorPlacement: function (error, element) {},
+    
+        submitHandler: function() {
+            it.find('input').val('');
+            var form_data = $(this).serialize(); //собераем все данные из формы
+            $.ajax({
+                // type: "get", //Метод отправки
+                // url: dataUrl, //путь до php фаила отправителя
+                // data: form_data,
+                //type: "POST",
+                // cache: false,
+                // processData: false,
+                // contentType: false,
+                success: function(data){
+                
+                    if(data == 0) {
+                        $('.no-portfolio').addClass('visible');
+                    }
+                    
+                    else {
+                        // Открываем след. модалку, в ней указываем input type = hidden в котором указываем введенное портфолио
+                        $("input, textarea").val('');
+                        $('.form-already').addClass('hidden');
+                        $('.form-desc').addClass('visible');
+                    }
+                    
+                },
+                error: function(error) {
+                    
+                }
+            });
+        },    
+    });
+});
+
+$('.form-desc').each(function() {
+    $(this).validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            phone: {
+                required: true,
+                    digits: true,
+            },
+            messages: {
+                required: true,
+            },
+            name: {
+                required: false,
+            },
+            url: {
+                required: true,
+                url: true
+            },
+            password: {
+                required: true,            
+            },
+            passwordYet: {
+                required: true,  
+                equalTo: "#password"          
+            }
         },
-    },
+        
+        errorPlacement: function (error, element) {},
+    
+        submitHandler: function() {
+            it.find('input').val('');
+            $.ajax({
+                // type: "get", //Метод отправки
+                // url: form_data, //путь до php фаила отправителя
+                // data: formdata,
+                //type: "POST",
+                // cache: false,
+                // processData: false,
+                // contentType: false,
+                success: function(data){
+                
+                    location.reload()
+                    
+                },
+                error: function(error) {
+                    
+                }
+            });
+        },  
+        
+    
+    });
+});
 
-    errorPlacement: function (error, element) {},
 
-    submitHandler: function() {
-        $(this).trigger('reset');
-        alert("Ожидайте звонка!");
-    },
 
+$("input[name='email']").focus(function() {
+    $(this).next($('.popup__error')).addClass('remove');
+});
+
+$('.m-img-cont').each(function(){
+    var imgCont = $(this).find('img').attr('src');
+    $(this).css('background-image','url('+imgCont+')');
+});
+
+new WOW({
+    mobile: false,
+}).init();
+$('#form-news').each(function() {
+    var it = $(this);
+    $(this).validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            phone: {
+                required: true,
+                    digits: true,
+            },
+            messages: {
+                required: true,
+            },
+            name: {
+                required: false,
+            },
+            password: {
+                required: true,            
+                
+            },
+            url: {
+                required: true,
+                url: true
+            },  
+            passwordYet: {
+                required: true,  
+                equalTo: "#password"          
+            }
+        },
+    
+        errorPlacement: function (error, element) {},
+    
+        submitHandler: function() {
+            it.find("input").val('');
+            it.find(".thanx").addClass('visible');
+            $(".thanx").addClass("visible");
+        },
+    
+    });
+})
+$('.my-form').each(function() {
+    $(this).validate({
+        rules: {
+            email: {
+                required: true,
+                email: true,
+            },
+            phone: {
+                required: true,
+                    digits: true,
+            },
+            messages: {
+                required: true,
+            },
+            name: {
+                required: false,
+            },
+            password: {
+                required: true,            
+                
+            },
+            passwordYet: {
+                required: true,  
+                equalTo: "#password"          
+            }
+        },
+    
+        errorPlacement: function (error, element) {},
+    
+        submitHandler: function() {
+            $(".my-form input").val('');
+            
+        },
+    
+    });
+})
+
+$("input[name='email']").focus(function() {
+    $(this).next($('.popup__error')).addClass('remove');
 });
 
 $('.m-img-cont').each(function(){
@@ -60,24 +296,6 @@ new WOW({
     mobile: false,
 }).init();
 
-$('.form-already').each(function() {
-    $(this).validate({
-        rules: {
-            url: {
-                required: true,            
-            }
-        },
-    
-        errorPlacement: function (error, element) {},
-    
-        submitHandler: function() {
-            $("#form-already").css("display", "none");
-            $("#form-desc").css("display", "flex");
-        },
-    
-    });
-});
-
 var mySwiper = new Swiper('.tools-tab', {
     speed: 400,
     spaceBetween: 10,
@@ -88,7 +306,6 @@ var mySwiper = new Swiper('.tools-tab', {
         }
     },
 });
-
 
 function copy(str){
     let tmp   = document.createElement('INPUT'),
@@ -106,48 +323,9 @@ $(".copy-button").click(function(){
     copy(str);
 });
 
-var constraints = {
-    url: {
-      presence: true,
-      exclusion: {
-        message: " is not allowed"
-      }
-    },
-  };
-$('#my-form-2').validate({
-    rules: {
-        email: {
-            required: true,
-            email: true,
-        },
-        phone: {
-            required: true,
-            digits: true,
-        },
-        messages: {
-            required: true,
-        },
-        name: {
-            required: false,
-        },
-        password: {
-            required: true,
-        }
-    },
-
-    errorPlacement: function (error, element) { },
-
-    submitHandler: function () {
-        $('#my-form').trigger('reset');
-        alert("Ожидайте звонка!");
-    },
-
-});
-
 $(document).ready(function () {
     $('select').niceSelect();
 });
-
 
 new WOW({
     mobile: false,
@@ -164,7 +342,6 @@ $( ".tools__tabs" ).tabs({
 
 });
 
-
 $(".accordion").accordion ({
     hide: { effect: "fade", duration: 150 },
     show: { effect: "fade", duration: 150 },
@@ -176,8 +353,7 @@ $(function () {
 
     $('.popup_close, .overlay, .humburger-overlay').on('click', function (event) {
         $('body').css('overflow', 'auto');
-        $('.popup, .overlay, .header-menu, .humburger-overlay').removeClass('visible');
-
+        $('.popup, .overlay, .thanx, .header-menu, .humburger-overlay, .period').removeClass('visible');
     });
 
     $(".callPopup").on('click', function (event) {
@@ -189,9 +365,6 @@ $(function () {
         $('body').css('overflow', 'hidden');
         $('.overlay').addClass('visible');
         $('.' + popup).addClass('visible');
-        setTimeout(function () {
-            $('.' + popup).find('input').eq(0).focus();
-        }, 1000)
     });
 
 });
@@ -230,10 +403,8 @@ $('.myChart').each(function(){
 
     var ctx = it;
     var chart = new Chart(ctx, {
-        // The type of chart we want to create
         type: 'line',
 
-        // The data for ou  r dataset
         data: {
             labels: dataLabel,
             datasets: [{
@@ -247,7 +418,6 @@ $('.myChart').each(function(){
                 }
             ],
         },
-        // Configuration options go here
         options: {
             title: {
                 display: false,
@@ -270,6 +440,9 @@ $('.myChart').each(function(){
                     ticks: {
                     }
                 }]
+            },
+            animation: {
+                duration: 0
             }
         }
     });
@@ -282,10 +455,8 @@ $('.myChart').each(function(){
 $('.myChartMulti').each(function(){
     var it = $(this);
     var dataLabelMulti = $(this).data("label").split(', ');
-    console.log(dataLabelMulti)
     var ctx1 = it;
     var data = $(this).closest('.chart').find('select option').val().split(',');
-    console.log(data)
 
     var chart = new Chart(ctx1, {
         // The type of chart we want to create
@@ -326,6 +497,9 @@ $('.myChartMulti').each(function(){
                     ticks: {
                     }
                 }]
+            },
+            animation: {
+                duration: 0
             }
         }
 
@@ -396,10 +570,154 @@ $('.myChartPie').each(function(){
                 legend: {
                     display: true,
                     position: 'right',
+                },
+                animation: {
+                    duration: 0
                 }
-                
-                
-			}
+            },
+
     });
 
 });
+
+$('.mixedChart').each(function() {
+    var it = $(this);
+    var ctxmix = it;
+    var radius = [];
+    var background = [];
+    var dataholiday = [];
+    var datamixdata = it.data('mixdata').split('');
+    console.log(datamixdata);
+    var data = [100, 100, 100, 100, 100, 100, 100, 100];
+    var holidays = [0,0,0,0,0,'Праздник 4',0,0];
+    var min = data[0];
+    // $.each( data, function( key, value ) {
+
+    //     if(value < min)
+    //     {
+    //         min = value;
+    //     }
+
+    // });
+
+    // var max = data[0];
+    // $.each( data, function( key, value ) {
+
+    //     if(value > max)
+    //     {
+    //         max = 1;
+    //     }
+
+    // });
+    // var added = max-min;
+    // var addednull = false;
+    // if(added == 0) {
+    //     added = 4;
+    //     addednull = true;
+    // }
+
+    // $.each( holidays, function( key, value ) {
+    //     if(value == 0) { 
+    //         radius[key] = 0;
+    //         background[key] = 'tranparent';
+    //         if(addednull)
+    //         {
+    //             if(key == 0) dataholiday[key] = min-added;
+    //             else  dataholiday[key] = min+added;
+    //         }
+    //         else dataholiday[key] = min+added/4; 
+    //     }
+    //     else {
+    //         radius[key] = 5;
+    //         background[key] = '#488af3';
+    //         if(addednull) dataholiday[key] = min-added/2;
+    //         else dataholiday[key] = min+added/4; 
+    //     }
+    // });
+
+    var mixedChart = new Chart(ctxmix, {
+        type: 'line',
+        data: {
+          datasets: [{
+                label: 'Line Dataset',
+                data: data,
+                type: 'line',
+                backgroundColor: 'transparent',
+                borderWidth: 2,
+                pointRadius: 3,
+                borderColor: '#1b203f',
+                pointBackgroundColor: "#488af3",
+                pointBorderColor: "#488af3",
+              },
+              {
+                type: 'bubble',
+                label: 'Data2',
+                borderWidth: 0,
+                //borderColor: ["tranparent", "tranparent", "tranparent", "tranparent", "tranparent", "tranparent", "tranparent", "tranparent", "tranparent", "tranparent", "tranparent", "tranparent"],
+                backgroundColor: background,
+                radius: radius,
+                data: dataholiday,
+                hoverRadius: -1,
+                hoverBorderWidth: 0
+              }],
+          labels: ['January', 'February', 'March', 'April','January', 'February', 'March', 'April',]
+        },
+
+        options: {
+            legend: {
+                display: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
+            elements : { line : { tension:0}},
+            lineTension: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                    }
+                }]
+            },
+            animation: {
+                duration: 0
+            }
+        }
+        
+      });
+
+});
+
+$(window).on('load', function() { // makes sure the whole site is loaded
+    setTimeout(function () {
+        $(".preload-body").css('overflow-y', 'auto');
+    }, 1000);
+    $("#status").fadeOut(); // will first fade out the loading animation
+    $("#preloader").delay(500).fadeOut("slow"); // will fade out the white DIV that covers the website.
+});
+
+
+$(document).ready(function () {
+    var x = $('#map').attr('data-x');
+    var y = $('#map').attr('data-y');
+
+    var myMap;
+
+    ymaps.ready(init);
+
+    function init () {
+        myMap = new ymaps.Map('map', {
+            center: [x , y],
+            zoom: 10
+        }, {
+            searchControlProvider: 'yandex#search'
+        });
+
+        var myPlacemark = new ymaps.Placemark([x, y], {
+        });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
+});
+
+

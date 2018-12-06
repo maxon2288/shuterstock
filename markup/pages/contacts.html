@@ -74,39 +74,8 @@
 
 
     <!-- Main scripts. You can replace it, but I recommend you to leave it here     -->
-    <script src="%=static=%js/main%=hash=%.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="%=static=%js/main%=hash=%.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            var x = $('#map').attr('data-x');
-            var y = $('#map').attr('data-y');
-
-            var myMap;
-
-            ymaps.ready(init);
-
-            function init () {
-                myMap = new ymaps.Map('map', {
-                    center: [x , y],
-                    zoom: 10
-                }, {
-                    searchControlProvider: 'yandex#search'
-                });
-
-                
-                var myPlacemark = new ymaps.Placemark([x, y], {
-                    // Хинт показывается при наведении мышкой на иконку метки.
-                    hintContent: 'Содержимое всплывающей подсказки',
-                    // Балун откроется при клике по метке.
-                    balloonContent: 'Содержимое балуна'
-                });
-
-                myMap.geoObjects.add(myPlacemark);
-            }
-
-            
-        });
-        
-    </script>   
+       
 </body>

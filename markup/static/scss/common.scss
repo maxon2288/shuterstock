@@ -411,22 +411,33 @@ overflow-y: hidden;
     }
     
     .m-field-popup {
-    width: 100%;
-    height: 44px;
-    background: transparent;
-    border: none;
-    transition: 0.3s;
-    font-family: geometria;
-    cursor: text;
-    outline: none;
-    background-color: #fff;
-    padding-left: 30px;
-    font-size: 14px;
-    color: black;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-weight: 500;
-    border: 1px solid #e0e4f1;
+        width: 100%;
+        height: 44px;
+        background: transparent;
+        border: none;
+        transition: 0.3s;
+        font-family: geometria;
+        cursor: text;
+        outline: none;
+        background-color: #fff;
+        padding-left: 30px;
+        font-size: 14px;
+        color: black;
+        text-transform: uppercase;
+        margin: 10px 0;
+        font-weight: 500;
+        border: 1px solid #e0e4f1;
+    }
+    .popup__error{
+        color: red;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 14px;
+        margin-bottom: 10px;
+        &.remove{
+            display: none;
+        }
     }
     
     .m-field-popup:focus {
@@ -639,6 +650,13 @@ overflow-y: hidden;
     margin: 0;
     }
     
+.main-block a {
+    color: #407cdc;
+    &:hover{
+        text-decoration: underline;
+        box-shadow: none;
+    }
+}
     @media screen and (max-width: 425px) {
     .main-block h2 {
     font-size: 20px;
@@ -916,6 +934,8 @@ overflow-y: hidden;
     
     .sidebar__title img {
     margin-left: 10px;
+    width: 25px;
+    height: 15px;
     }
     
     .sidebar__min {
@@ -1377,6 +1397,7 @@ overflow-y: hidden;
     
     .info-per-left {
     display: flex;
+    flex-wrap: wrap;
     font-size: 16px;
     color: #979aa4;
     line-height: 1.2;
@@ -1499,7 +1520,6 @@ overflow-y: hidden;
     color: black;
     text-transform: uppercase;
     }
-
     .already-code{
         border: 1px solid #cecece;
         background-color: rgb(240, 240, 240);
@@ -1513,12 +1533,27 @@ overflow-y: hidden;
         justify-content: center;
         align-items: center;
     }
-
-    #form-desc{
+.form-already {
+    &.hidden {
         display: none;
+    }
+}
+
+.no-portfolio{ 
+    display: none;
+    width: 100%;
+    margin: 10px 0;
+    color: red;
+    text-align: center;
+    &.visible{
+        display: flex;
+    }
+}
+    .form-desc{
         max-width: 100%;
         flex-direction: column;
         align-items: stretch;
+        display: none !important;
         img{
             max-width: 100%;
             height: auto;
@@ -1526,6 +1561,9 @@ overflow-y: hidden;
         }
         .m-button-1{
             width: 100%;
+        }
+        &.visible{
+            display: flex !important;
         }
     }
     
@@ -1779,9 +1817,15 @@ overflow-y: hidden;
         display: flex;
         flex-direction: row;
         overflow: auto;
+        &.chart-container-holiday{
+            flex-direction: column;
+        }
+        .sidebar__item{
+            margin-top: 30px;
+        }
     }
     
-    .myChart {
+    .myChart, .mixedChart {
         margin-right: 30px;
         padding: 13px;
         border-radius: 3px;
@@ -1808,6 +1852,8 @@ overflow-y: hidden;
         width: 100%;
         padding: 35px 45px;
         margin-left: 30px;
+        display: flex;
+        flex-direction: column;
         align-self: flex-start;
         border-radius: 3px;
         background-color: #132d57;
@@ -1834,6 +1880,7 @@ overflow-y: hidden;
     
     .chart__place {
     margin-top: 10px;
+    align-self: flex-start;
     background-color: #488af3;
     }
     
@@ -2041,6 +2088,9 @@ overflow-y: hidden;
     margin-right: 5px;
     font-family: 'geometria';
     color: black;
+    &:hover{
+        text-decoration: underline;
+    }
     }
     
     .hund {
@@ -2391,7 +2441,7 @@ overflow-y: hidden;
         margin-top: -7px !important;
     }
     
-    .myChart, .myChartMulti, .myChartPie {
+    .myChart, .myChartMulti, .myChartPie, .mixedChart {
         background-color: #fff;
         display: flex;
         justify-content: flex-start;
@@ -2505,6 +2555,34 @@ overflow-y: hidden;
     width: 100%;
     height: 100%;
     border-radius: 10px;
+    }
+    #form-news {
+        position: relative;
+    }
+    .thanx{
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        justify-content: center;
+        transition: 0.3s;
+        width: 110%;
+        height: 100%;
+        .m-title {
+            text-align: center;
+        }
+        .m-desc{
+            text-align: center;
+        }
+        &.visible{
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+            background: #fff;
+        }
     }
     
     .map {
@@ -2822,10 +2900,10 @@ overflow-y: hidden;
     
     .popup_close {
         position: absolute;
-        right: 15px;
-        top: 15px;
         width: 30px;
         height: 30px;
+        top: 15px;
+        right: 15px;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -2836,10 +2914,6 @@ overflow-y: hidden;
             width: 15px;
             height: 15px;
             fill: #c4c4c4;
-        }
-        @media screen and(max-width: 425px) {
-            right: 0px;
-            top: 0px;   
         }
     }
     
@@ -3062,7 +3136,9 @@ overflow-y: hidden;
     overflow: hidden;
     max-width: 100%;
     padding-top: 90px;
-    p
+    .main-block {
+        box-shadow: none;
+    }
     .m-title {
         text-align: center;
     }
@@ -3254,5 +3330,125 @@ overflow-y: hidden;
     @media screen and(max-width: 1100px) {
         display: flex !important;
         flex-direction: column !important;
+    }
+}
+.period {
+    max-width: auto !important;
+    min-width: auto !important;
+    width: auto !important;
+    .rate{
+        display: flex;
+        max-width: 100%;
+        margin-bottom: 0;
+        flex-wrap: wrap !important;
+        &__item{
+            width: 100%;
+            height: 100%;
+            margin-bottom: 30px;
+            background-color: #fff;
+        }
+    }
+}
+
+.period {
+    border-radius: 3px;
+    background-color: white;
+    box-shadow: 0px 10px 32px 0px rgba(19, 45, 87, 0.05);
+    max-width: 1023px;
+    width: 1024px;
+    padding: 50px 60px;
+    padding-top: 70px;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 100000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .period {
+        max-width: 700px;
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+.period {
+max-width: 300px;
+padding: 15px;
+padding-bottom: 25px;
+}
+}
+
+.period.visible {
+opacity: 1;
+visibility: visible;
+}
+
+
+label {
+	display: flex;
+    align-items: center;
+    padding: 30px 0;
+    cursor: pointer;
+    user-select: none;
+	input {
+		display: none;
+		&:checked {
+			~ div {
+				&:before {
+                    opacity: 1;
+                    transform: scale(1);
+				}
+			}
+		}	
+	}
+	p {
+		color: #0d163f;
+		font-size: 16px;
+        font-weight: 400;
+        font-weight: bold;  
+	}
+	div {
+		width: 25px;
+		position: relative;
+		height: 25px;
+		flex-shrink: 0;
+		border: 1px solid #488af3;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: 0.3s;
+        position: relative;
+		&:before {
+			content: "";
+			width: 15px;
+            transition: 0.3s;
+            height: 15px;
+			border-radius: 50%;
+            transition-timing-function: cubic-bezier(.49,.37,.39,1.29);
+            opacity: 0;
+            position: absolute;
+            top: 4px;
+            left: 4px;  
+			background: #488af3;
+            transform: scale(0);
+		}
+	}
+}
+
+.widget-shuterstock{
+    width: 100%;
+    iframe{
+        width: 100%;
+        height: 600px;
     }
 }

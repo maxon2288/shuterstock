@@ -5,9 +5,10 @@
     {{> head/head head.defaults}}
 </head>
 
-<body class="page">
+<body class="page preload-body">
     %=symbols=% {{> header/header}}
 
+    
     <div class="main">
         <div class="wrapper">
 
@@ -169,6 +170,8 @@
 
             
 
+            
+
 
         </div>
     </div>
@@ -176,6 +179,9 @@
     <div class="page__buffer"></div>
 
     {{> footer/ footer}}
+
+    {{> preloader/preloader}}
+
 
     <script src="%=static=%js/separate-js/svg4everybody.min.js"></script>
 
