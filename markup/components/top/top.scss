@@ -44,6 +44,15 @@
             display: flex;
             flex-direction: column;
         }
+        .active {
+            font-size: 18px;
+            span {
+                font-size: 18px;
+            }
+            div {
+                font-size: 18px;
+            }
+        }
     }
     &__top{
         display: flex;
@@ -180,7 +189,6 @@
     }
     &__top{
         display: flex;
-        margin-bottom: 5px;
         @media screen and (max-width: 320px){
             flex-direction: column;
         }
@@ -256,10 +264,6 @@
             }
         }
     }
-    &__rating{
-        margin-bottom: 10px;
-    }
-    
 }
 
 .profile{
