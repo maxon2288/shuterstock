@@ -191,7 +191,6 @@ $('.form-desc').each(function() {
 });
 
 
-
 $("input[name='email']").focus(function() {
     $(this).next($('.popup__error')).addClass('remove');
 });
@@ -696,28 +695,30 @@ $(window).on('load', function() { // makes sure the whole site is loaded
     $("#preloader").delay(500).fadeOut("slow"); // will fade out the white DIV that covers the website.
 });
 
+if ($("#map").length > 0) {
+    $(document).ready(function () {
+        var x = $('#map').attr('data-x');
+        var y = $('#map').attr('data-y');
+    
+        var myMap;
+    
+        ymaps.ready(init);
+    
+        function init () {
+            myMap = new ymaps.Map('map', {
+                center: [x , y],
+                zoom: 10
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+    
+            var myPlacemark = new ymaps.Placemark([x, y], {
+            });
+    
+            myMap.geoObjects.add(myPlacemark);
+        }
+    });
 
-$(document).ready(function () {
-    var x = $('#map').attr('data-x');
-    var y = $('#map').attr('data-y');
-
-    var myMap;
-
-    ymaps.ready(init);
-
-    function init () {
-        myMap = new ymaps.Map('map', {
-            center: [x , y],
-            zoom: 10
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
-
-        var myPlacemark = new ymaps.Placemark([x, y], {
-        });
-
-        myMap.geoObjects.add(myPlacemark);
-    }
-});
+}
 
 

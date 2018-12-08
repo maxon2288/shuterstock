@@ -239,6 +239,11 @@
         .capt-link{
             margin-top: 0;
         }
+        .m-button-1 {
+            max-width: 100%;
+            min-width: 0px; 
+            width: 100%;
+        }
         .capt-link-cont{
             width: auto;
             margin-right: auto;
@@ -250,6 +255,11 @@
         }
         .place{
             height: 44px;
+            margin-right: 10px;
+            font-weight: 500;
+            &.place-this {
+                margin-right: 0;
+            }
         }
     }
     &__title{
