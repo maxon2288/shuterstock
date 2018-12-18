@@ -1,10 +1,10 @@
 <div class="overlay"></div>
 
 <div class="popup-sign popup">
-    <div class="popup_close">
+    <div class="popupClose">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
     </div>
-    <form action="/" id="my-form">
+    <form action="/" class="form">
         <div class="popup__title">
                 Войти
         </div>
@@ -15,33 +15,78 @@
 
         <button class="m-button-1 popup__submit">Войти</button>
 
-        <a href="popup/popup-2.html" class="m-link popup__link  callPopup popup-reg-open" data-popupBlock="popup-reg">
+        
+        <div class="popup-sign__links">
+            <a href="popup/popup-2.html" class="m-link popup__link callPopup" data-popupBlock="popup-reg">
                 Регистрация
-        </a>
+            </a>
+
+            <a href="popup/popup-2.html" class="m-link popup__link callPopup" data-popupBlock="popup-recovery">
+                Забыли пароль?
+            </a>
+            
+        </div>
 
     </form>
 </div>
 
-<div class="popup-reg popup">
-    <div class="popup_close">
+
+<div class="popup-recovery popup">
+    <div class="popupClose">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
     </div>
 
-    <form action="/" id="my-form-2">
+    <form action="/" class="recovery" data-popup="popup-newPassword">
+        <div class="popup__title">
+            восстановление 
+        </div>
+        
+        <input type="text" name="email" placeholder="E-mail" class="m-field-popup">
+        
+        <button class="m-button-1 popup__submit">отправить</button>
+    </form>
+
+</div>
+<div class="popup-newPassword popup">
+    <div class="popupClose">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
+    </div>
+
+    <form action="/" class="new-password">
+        <div class="popup__title">
+            Новый пароль 
+        </div>
+        
+        <input type="password" name="password" placeholder="Придумайте пароль" class="m-field-popup" id="password-1">
+
+        <input type="password" name="passwordYet"  data-rule-equalTo="#password-1" placeholder="Повторите пароль" class="m-field-popup">
+        
+        <button class="m-button-1 popup__submit">отправить</button>
+    </form>
+
+</div>
+
+
+<div class="popup-reg popup">
+    <div class="popupClose">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
+    </div>
+
+    <form action="/" class="form-reg">
         <div class="popup__title">
                 Регистрация
         </div>
         
-        <input type="text" name="email" placeholder="E- mail" class="m-field-popup">
+        <input type="text" name="email" placeholder="E-mail" class="m-field-popup">
 
-        <input type="text" name="password" placeholder="Придумайте пароль" class="m-field-popup">
+        <input type="password" name="password" placeholder="Придумайте пароль" class="m-field-popup" id="password-2">
 
-        <input type="text" name="passwordYet" placeholder="Повторите пароль" class="m-field-popup">
+        <input type="password" name="passwordYet" data-rule-equalTo="#password-2" placeholder="Повторите пароль" class="m-field-popup">
         
         <button class="m-button-1 popup__submit">регистрация</button>
     </form>
 
-    <a href="popup/popup-2.html" class="m-link popup__link  callPopup popup-sign-open">
+    <a href="popup/popup-2.html" class="m-link popup__link callPopup" data-popupBlock="popup-sign">
         Войти
     </a>
 </div>
@@ -49,7 +94,7 @@
 {{> already/already}}
 
 <div class="popup modal-news">
-    <div class="popup_close">
+    <div class="popupClose">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
     </div>
 
@@ -78,7 +123,7 @@
 </div>
 
 <div class="period">
-    <div class="popup_close">
+    <div class="popupClose">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
     </div>
 

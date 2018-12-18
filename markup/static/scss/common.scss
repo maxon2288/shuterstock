@@ -60,6 +60,13 @@ overflow-y: hidden;
     .ptn {
         padding-top: 0;
     }
+
+    .mt25 {
+        margin-top: 25px;
+    }
+    .mb25 {
+        margin-bottom: 25px;
+    }
     
     a {
     text-decoration: none;
@@ -225,6 +232,12 @@ overflow-y: hidden;
         border-color: #488af3;
         box-shadow: 0px 4px 24px 0px rgba(72, 138, 243, 0.47);
         cursor: pointer;
+        display: block; 
+        line-height: 40px;
+        text-align: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     
     .m-button-1:hover {
@@ -409,6 +422,17 @@ overflow-y: hidden;
     .m-field:hover:focus {
     border-color: #fff;
     }
+
+
+    .popup-sign {
+        &__links {
+            display: flex;
+            max-width: 300px;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
     
     .m-field-popup {
         width: 100%;
@@ -538,7 +562,6 @@ overflow-y: hidden;
     font-weight: 700;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 25px;
     }
     
     @media screen and (max-width: 425px) {
@@ -607,7 +630,6 @@ overflow-y: hidden;
     .main-block {
         background-color: #fff;
         border-radius: 3px;
-        margin-top: 30px;
         width: 100%;
         background-color: white;
         box-shadow: 0px 10px 32px 0px rgba(19, 45, 87, 0.05);
@@ -845,7 +867,7 @@ overflow-y: hidden;
     
     .main {
     width: 100%;
-    padding-top: 95px;
+    padding-top: 40px;
     padding-bottom: 65px;
     position: relative;
     }
@@ -1092,12 +1114,19 @@ overflow-y: hidden;
     display: flex;
     flex-wrap: wrap;
     }
-    
     .main-block b, .main-block strong {
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: uppercase;
-    margin-top: 30px;
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 30px;
+    }
+
+    .main-block a {
+        @extend .m-link;
+        margin-top: 0;
+        display: inline;
+        &:before{
+            display: none;
+        }
     }
     
     .m-title-authors {
@@ -1137,6 +1166,7 @@ overflow-y: hidden;
     display: flex;
     width: 100%;
     margin-bottom: 40px;
+    margin-top: 25px;
     }
     
     .category .m-button-2 {
@@ -1791,7 +1821,7 @@ overflow-y: hidden;
         display: flex;
         flex: 16px;
         font-size: 16px;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
     }
     
     .work-preview__portfolio-place span {
@@ -1807,6 +1837,7 @@ overflow-y: hidden;
         width: 100%;
         margin-right: 10px;
         margin-bottom: 10px;
+        margin-top: 15px;
         &-2{
             margin-right: 10px;
         }
@@ -2083,15 +2114,13 @@ overflow-y: hidden;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 60px;
-    margin-bottom: 40px;
     &__item {
         max-width: 400px;
         width: 100%;
         min-width: 0;
         display: flex;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 }
     .category-menu__container {
@@ -2130,6 +2159,7 @@ overflow-y: hidden;
         font-size: 16px;
         color: #488af3;
         font-weight: 500;
+        min-width: 100px;
     }
     
     .category-menu .menu__link {
@@ -2961,7 +2991,7 @@ overflow-y: hidden;
         }
     }
     
-    .popup_close {
+    .popupClose {
         position: absolute;
         width: 30px;
         height: 30px;
@@ -2980,7 +3010,7 @@ overflow-y: hidden;
         }
     }
     
-    .popup_close:hover {
+    .popupClose:hover {
         transform: rotate(90deg);
     }
     

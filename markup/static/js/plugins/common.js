@@ -1,3 +1,4 @@
+forms ();
 $('.my-form').each(function() {
     $(this).validate({
         rules: {
@@ -40,6 +41,7 @@ $('.my-form').each(function() {
                 url: 'mail.php',
                 data: data,
                 success: function(data){
+                    
                 }
             });
         },  
@@ -66,131 +68,6 @@ $('.search').each(function() {
     });
 });
 
-$('.form-already').each(function() {
-    var it = $(this);
-    $(this).validate({
-        rules: {
-            email: {
-                required: true,
-                email: true,
-            },
-            phone: {
-                required: true,
-                    digits: true,
-            },
-            messages: {
-                required: true,
-            },
-            url: {
-                required: true,
-                url: true
-            },
-            name: {
-                required: false,
-            },
-            password: {
-                required: true,            
-                
-            },
-            passwordYet: {
-                required: true,  
-                equalTo: "#password"          
-            }
-        },
-    
-        errorPlacement: function (error, element) {},
-    
-        submitHandler: function() {
-            it.find('input').val('');
-            var form_data = $(this).serialize(); //собераем все данные из формы
-            $.ajax({
-                // type: "get", //Метод отправки
-                // url: dataUrl, //путь до php фаила отправителя
-                // data: form_data,
-                //type: "POST",
-                // cache: false,
-                // processData: false,
-                // contentType: false,
-                success: function(data){
-                
-                    if(data == 0) {
-                        $('.no-portfolio').addClass('visible');
-                    }
-                    
-                    else {
-                        // Открываем след. модалку, в ней указываем input type = hidden в котором указываем введенное портфолио
-                        $("input, textarea").val('');
-                        $('.form-already').addClass('hidden');
-                        $('.form-desc').addClass('visible');
-                    }
-                    
-                },
-                error: function(error) {
-                    
-                }
-            });
-        },    
-    });
-});
-
-$('.form-desc').each(function() {
-    $(this).validate({
-        rules: {
-            email: {
-                required: true,
-                email: true,
-            },
-            phone: {
-                required: true,
-                    digits: true,
-            },
-            messages: {
-                required: true,
-            },
-            name: {
-                required: false,
-            },
-            url: {
-                required: true,
-                url: true
-            },
-            password: {
-                required: true,            
-            },
-            passwordYet: {
-                required: true,  
-                equalTo: "#password"          
-            }
-        },
-        
-        errorPlacement: function (error, element) {},
-    
-        submitHandler: function() {
-            it.find('input').val('');
-            $.ajax({
-                // type: "get", //Метод отправки
-                // url: form_data, //путь до php фаила отправителя
-                // data: formdata,
-                //type: "POST",
-                // cache: false,
-                // processData: false,
-                // contentType: false,
-                success: function(data){
-                
-                    location.reload()
-                    
-                },
-                error: function(error) {
-                    
-                }
-            });
-        },  
-        
-    
-    });
-});
-
-
 $("input[name='email']").focus(function() {
     $(this).next($('.popup__error')).addClass('remove');
 });
@@ -203,84 +80,7 @@ $('.m-img-cont').each(function(){
 new WOW({
     mobile: false,
 }).init();
-$('#form-news').each(function() {
-    var it = $(this);
-    $(this).validate({
-        rules: {
-            email: {
-                required: true,
-                email: true,
-            },
-            phone: {
-                required: true,
-                    digits: true,
-            },
-            messages: {
-                required: true,
-            },
-            name: {
-                required: false,
-            },
-            password: {
-                required: true,            
-                
-            },
-            url: {
-                required: true,
-                url: true
-            },  
-            passwordYet: {
-                required: true,  
-                equalTo: "#password"          
-            }
-        },
-    
-        errorPlacement: function (error, element) {},
-    
-        submitHandler: function() {
-            it.find("input").val('');
-            it.find(".thanx").addClass('visible');
-            $(".thanx").addClass("visible");
-        },
-    
-    });
-})
-$('.my-form').each(function() {
-    $(this).validate({
-        rules: {
-            email: {
-                required: true,
-                email: true,
-            },
-            phone: {
-                required: true,
-                    digits: true,
-            },
-            messages: {
-                required: true,
-            },
-            name: {
-                required: false,
-            },
-            password: {
-                required: true,            
-                
-            },
-            passwordYet: {
-                required: true,  
-                equalTo: "#password"          
-            }
-        },
-    
-        errorPlacement: function (error, element) {},
-    
-        submitHandler: function() {
-            $(".my-form input").val('');
-            
-        },
-    
-    });
-})
+
 
 $("input[name='email']").focus(function() {
     $(this).next($('.popup__error')).addClass('remove');
@@ -357,6 +157,7 @@ $(function () {
 
     $(".callPopup").on('click', function (event) {
         event.preventDefault();
+        $(".popup").removeClass("visible");
         var popup = $(this).attr('data-popupBlock');
         if ($('.' + popup).hasClass('popup--notfixed')) {
             $('.' + popup).css('top', $(window).scrollTop() + $(window).height() / 2);
@@ -366,6 +167,10 @@ $(function () {
         $('.' + popup).addClass('visible');
     });
 
+});
+
+$(".popupClose, .overlay").click(function() {
+    $(".popup, .overlay").removeClass('visible');
 });
 
 $('.menu-open').click(function() {
