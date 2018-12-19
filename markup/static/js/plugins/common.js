@@ -55,6 +55,9 @@ $(document).ready(function() {
     console.log('dsdsd');
     });
 });
+
+
+
 $('.search').each(function() {
     var it = $(this);
     it.validate({
@@ -138,7 +141,6 @@ $( ".tabs" ).tabs({
 $( ".tools__tabs" ).tabs({
     hide: { effect: "fade", duration: 150 },
     show: { effect: "fade", duration: 150 },
-
 });
 
 $(".accordion").accordion ({
@@ -150,7 +152,7 @@ $(".accordion").accordion ({
 
 $(function () {
 
-    $('.popup_close, .overlay, .humburger-overlay').on('click', function (event) {
+    $('.popupClose, .overlay, .humburger-overlay').on('click', function (event) {
         $('body').css('overflow', 'auto');
         $('.popup, .overlay, .thanx, .header-menu, .humburger-overlay, .period').removeClass('visible');
     });
@@ -171,6 +173,7 @@ $(function () {
 
 $(".popupClose, .overlay").click(function() {
     $(".popup, .overlay").removeClass('visible');
+    $('body').css('overflow', 'auto');
 });
 
 $('.menu-open').click(function() {

@@ -4,14 +4,14 @@
     <div class="popupClose">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
     </div>
-    <form action="/" class="form">
+    <form action="/" class="form-sign">
         <div class="popup__title">
                 Войти
         </div>
 
-        <input type="text" name="email" placeholder="Логин" class="m-field-popup">
+        <input type="text" name="email" placeholder="Логин" class="m-field-popup" >
 
-        <input type="text" name="password" placeholder="Пароль" class="m-field-popup">
+        <input type="password" name="password" placeholder="Пароль" class="m-field-popup">
 
         <button class="m-button-1 popup__submit">Войти</button>
 
@@ -30,13 +30,12 @@
     </form>
 </div>
 
-
 <div class="popup-recovery popup">
     <div class="popupClose">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
     </div>
 
-    <form action="/" class="recovery" data-popup="popup-newPassword">
+    <form action="/" class="recovery" data-popup="popup-message">
         <div class="popup__title">
             восстановление 
         </div>
@@ -47,22 +46,48 @@
     </form>
 
 </div>
-<div class="popup-newPassword popup">
+
+<div class="popup-message popup">
     <div class="popupClose">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
     </div>
 
     <form action="/" class="new-password">
+        <div class="popup__desc m-desc">
+            Вам на почту придет сообщение с подтверждением пароля 
+        </div>
+        
+    </form>
+
+</div>
+
+<div class="popup-newPassword popup">
+    <div class="popupClose">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
+    </div>
+
+    <form action="/" class="new-password"  data-popup="popup-newPassword-success">
         <div class="popup__title">
             Новый пароль 
         </div>
         
         <input type="password" name="password" placeholder="Придумайте пароль" class="m-field-popup" id="password-1">
 
-        <input type="password" name="passwordYet"  data-rule-equalTo="#password-1" placeholder="Повторите пароль" class="m-field-popup">
+        <input type="password" name="passwordYet"  data-msg="Пароли не совпадают" data-rule-equalTo="#password-1" placeholder="Повторите пароль" class="m-field-popup">
         
         <button class="m-button-1 popup__submit">отправить</button>
     </form>
+
+</div>
+
+<div class="popup-newPassword-success popup">
+    <div class="popupClose">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.9 21.9"><path d="M14.1 11.3c-.2-.2-.2-.5 0-.7l7.5-7.5c.2-.2.3-.5.3-.7s-.1-.5-.3-.7L20.2.3c-.2-.2-.5-.3-.7-.3-.3 0-.5.1-.7.3l-7.5 7.5c-.2.2-.5.2-.7 0L3.1.3C2.9.1 2.6 0 2.4 0s-.5.1-.7.3L.3 1.7c-.2.2-.3.5-.3.7s.1.5.3.7l7.5 7.5c.2.2.2.5 0 .7L.3 18.8c-.2.2-.3.5-.3.7s.1.5.3.7l1.4 1.4c.2.2.5.3.7.3s.5-.1.7-.3l7.5-7.5c.2-.2.5-.2.7 0l7.5 7.5c.2.2.5.3.7.3s.5-.1.7-.3l1.4-1.4c.2-.2.3-.5.3-.7s-.1-.5-.3-.7l-7.5-7.5z"/></svg>
+    </div>
+
+    <div class="popup__desc m-desc">
+        Новый пароль активирован!
+    </div>
 
 </div>
 
